@@ -3,5 +3,14 @@ html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
+
+
+    ul(class="nav_list")
+        li 
+          a(class="nav_option", href='index') Home
+        li 
+          a(class="nav_option", href='market') Market
+        li 
+          a(class="nav_option", href='weather') Weather
   body
     block content
