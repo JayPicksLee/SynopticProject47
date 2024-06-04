@@ -5,12 +5,14 @@ html
     link(rel='stylesheet', href='/stylesheets/style.css')
 
 
-    ul(class="nav_list")
+    nav(class="nav")
+    div(class="nav_container")
+      ul(class="nav_list")
         li 
-          a(class="nav_option", href='index') Home
+         a(class = "nav_option", href='index') Home
         li 
-          a(class="nav_option", href='market') Market
+         a(class = "nav_option", href='weather') Weather
         li 
-          a(class="nav_option", href='weather') Weather
+         a(class = "nav_option", href='market') Market
   body
     block content

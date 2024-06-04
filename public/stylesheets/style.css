@@ -6,3 +6,58 @@ body {
 a {
   color: #00B7FF;
 }
+
+.nav{
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color: #1f1f1f;
+}
+
+.nav_container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+ }
+
+ .nav_list li{
+  list-style: none;
+  display: inline-block;
+}
+
+.nav_option{
+  font-size: 18px;
+  font-weight: bold;
+  margin-right: 25px;
+  color: white;
+  text-decoration: none;
+  position: relative;
+}
+
+.nav_option:hover {
+  color:#bebebe;
+}
+
+.nav_option:focus,
+.nav_option:hover {
+  color: #fff;
+}
+
+.nav_option:focus:after,
+.nav_option:hover:after {
+  width: 100%;
+  left: 0%;
+}
+
+.nav_option:after {
+  content: "";
+  pointer-events: none;
+  bottom: -2px;
+  left: 50%;
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background-color: #fff;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: width, left;
+}
