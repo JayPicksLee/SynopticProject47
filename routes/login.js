@@ -6,7 +6,9 @@ const usermodel = require('../model/users.js');
 router.get('/', function(req, res, next) { 
     console.log(req.session);
     console.log(req.session.id);
-  
+    console.log(req.session.userID);
+    console.log(req.session.isLoggedIn);
+
     req.sessionStore.get(req.session.id, (err, sessionData) =>{
       if(err){
         console.log(err);
@@ -37,7 +39,7 @@ router.post(
   
         const userID = await usermodel.getUserID(username);
         req.session.userID = userID;
-        
+        req.session.isLoggedIn = true;
         //Checking user details
         const user = await usermodel.checkLoginDetails(username, password);
   

@@ -5,7 +5,9 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   console.log(req.session);
   console.log(req.session.id);
-
+  console.log(req.session.userID);
+  console.log(req.session.isLoggedIn);
+  
   req.sessionStore.get(req.session.id, (err, sessionData) =>{
     if(err){
       console.log(err);
