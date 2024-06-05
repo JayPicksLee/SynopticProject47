@@ -6,7 +6,8 @@ var logger = require('morgan');
 var mongoose = require('mongoose');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var usersRouter = require('./routes/user');
+var adminRouter = require('./routes/admin');
 var weatherRouter = require('./routes/weather');
 var marketRouter = require('./routes/market');
 var tourismRouter = require('./routes/tourism');
@@ -32,7 +33,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/user', usersRouter);
+app.use('/admin', adminRouter);
 app.use('/weather', weatherRouter);
 app.use('/market', marketRouter);
 app.use('/tourism', tourismRouter);
