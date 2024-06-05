@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 const usermodel = require('../model/users.js');
 
-/* GET users listing. */
+/* GET signup page */
 router.get('/', function(req, res, next) {
     console.log(req.session);
     console.log(req.session.id);

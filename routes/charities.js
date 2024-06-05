@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET market page. */
+/* GET charities page. */
 router.get('/', function(req, res, next) {
   console.log(req.session);
   console.log(req.session.id);
