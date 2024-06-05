@@ -1,4 +1,15 @@
 extends layout
 
-block content
+block content   
+    head 
+    link(rel='stylesheet', href='/stylesheets/market.css')
     h1 Welcome to the market
+    div(class = "searchcontainer" )
+        search
+            form(action="./search/")
+                input(type="search")                  
+    head 
+ 
+    main
+        div
+
