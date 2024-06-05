@@ -12,6 +12,8 @@ var weatherRouter = require('./routes/weather');
 var marketRouter = require('./routes/market');
 var tourismRouter = require('./routes/tourism');
 var charitiesRouter = require('./routes/charities');
+var signupRouter = require('./routes/signup');
+var loginRouter = require('./routes/login');
 
 var app = express();
 
@@ -39,6 +41,8 @@ app.use('/weather', weatherRouter);
 app.use('/market', marketRouter);
 app.use('/tourism', tourismRouter);
 app.use('/charities', charitiesRouter);
+app.use('/signup', signupRouter);
+app.use('/login', loginRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
