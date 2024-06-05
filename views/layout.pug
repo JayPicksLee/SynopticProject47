@@ -6,26 +6,26 @@ html
 
 
   nav(class="nav")
-  div(class="nav_container")
-    ul(class="nav_list")
-      li 
-        a(class = "nav_option", href='/') Home
-      li 
-        a(class = "nav_option", href='weather') Weather
-      li 
-        a(class = "nav_option", href='market') Market
-      li 
-        a(class = "nav_option", href='tourism') Tourism
-      li 
-        a(class = "nav_option", href='charities') Charities
-      li 
-    div(class = "nav_accounts")
-        if session.isLoggedIn != true
-          a(class = "nav_option", href='login', id = "signIn") Sign in 
-        else 
-          a(class = "nav_option", href='login', id = "signOut") ) Sign out
-          form(action='logout', method='POST', id="logout_button")
-            input(type="submit", name="logout", value="Logout", id="logout_input")
+    div(class="nav_container")
+      ul(class="nav_list")
+        li 
+          a(class = "nav_option", href='/') Home
+        li 
+          a(class = "nav_option", href='weather') Weather
+        li 
+          a(class = "nav_option", href='market') Market
+        li 
+          a(class = "nav_option", href='tourism') Tourism
+        li 
+          a(class = "nav_option", href='charities') Charities
+        li 
+      div(class = "nav_accounts")
+          if session.isLoggedIn != true
+            a(class = "nav_option", href='login', id = "signIn") Sign in 
+          else 
+            a(class = "nav_option", href='login', id = "signOut") ) Sign out
+            form(action='logout', method='POST', id="logout_button")
+              input(type="submit", name="logout", value="Logout", id="logout_input")
 
   body
     block content

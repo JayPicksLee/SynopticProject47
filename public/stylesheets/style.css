@@ -1,5 +1,5 @@
 body {
-  padding: 50px;
+  margin:0;
   background-color: white;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
@@ -9,16 +9,14 @@ a {
 }
 
 .nav{
-  padding-left: 15px;
-  padding-right: 15px;
-  background-color: #1f1f1f;
+  background-color: #a0a0a0;
+  width:100%;
 }
 
 .nav_container{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #a0a0a0;
  }
 
  .nav_list li{
