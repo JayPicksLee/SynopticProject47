@@ -9,7 +9,7 @@ a {
 }
 
 .nav{
-  background-color: #a0a0a0;
+  background-color: #3f3f3f;
   width:100%;
 }
 
@@ -28,7 +28,7 @@ a {
   font-size: 18px;
   font-weight: bold;
   margin-right: 25px;
-  color: black;
+  color: rgb(189, 189, 189);
   text-decoration: none;
   position: relative;
 }
