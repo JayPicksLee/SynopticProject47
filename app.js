@@ -24,7 +24,6 @@ mongoose.connect(dId)
   .then(()=> console.log('Connected to database'))
   .catch((err) => console.log(`Error: ${err}`));
 
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
@@ -49,8 +48,6 @@ app.use('/login', loginRouter);
 app.use(function(req, res, next) {
   next(createError(404));
 });
-
-
 
 // error handler
 app.use(function(err, req, res, next) {
