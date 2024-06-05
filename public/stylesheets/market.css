@@ -1,0 +1,16 @@
+h1 {
+    color: black;
+    text-align: center;
+}
+.searchcontainer {    
+
+    width: 100%;
+    min-height: 100vh;
+    padding: 5%;
+    background-image: linear-gradient blue;
+    display: flex;
+ 
+}
+.search-bar {
+
+}

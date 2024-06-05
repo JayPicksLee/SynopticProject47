@@ -3,7 +3,10 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var session = require('express-session');
+var crypto = require('crypto');
 var mongoose = require('mongoose');
+var bcrypt = require("bcrypt");
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/user');
@@ -23,10 +26,27 @@ mongoose.connect(dId)
   .then(()=> console.log('Connected to database'))
   .catch((err) => console.log(`Error: ${err}`));
 
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
+
+const secretSession = crypto.randomBytes(32).toString('hex');
+
+app.use(
+  session({
+    secret: secretSession,
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+      maxAge: 60000 * 60,
+    },
+  })
+)
+
+app.use(function(req,res,next){
+  res.locals.session = req.session;
+  next();
+});
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -48,8 +68,6 @@ app.use('/login', loginRouter);
 app.use(function(req, res, next) {
   next(createError(404));
 });
-
-
 
 // error handler
 app.use(function(err, req, res, next) {
