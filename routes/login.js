@@ -32,21 +32,21 @@ router.post(
           //Checking user status to differentiate user and admin
           if (level) { 
   
-            res.redirect('/mainAdmin');
+            res.redirect('/admin');
           } else {
   
-            res.redirect('/main');
+            res.redirect('/user');
           }
   
         } else {
   
           console.log("Invalid login details");
-          res.render('index', { error: true, message: "Invalid login details" });
+          res.render('/', { error: true, message: "Invalid login details" });
         }
       } else {
   
         console.log("User does not exist");
-        res.render('index', { error: true, message: "User does not exist" });
+        res.render('/', { error: true, message: "User does not exist" });
       }
   
     } catch (error) {

@@ -20,12 +20,12 @@ router.post('/createNewUser', (req, res, next) => {
         usermodel.signUpUser(username, password, email, phoneNumber);
         
         console.log("Signup successful");
-        res.redirect('/');
+        res.redirect('/login');
         
     } 
     catch (error) 
     { 
-        res.render('register', { errorMessage: error.message });
+        res.render('signup', { errorMessage: error.message });
     }
   });
 

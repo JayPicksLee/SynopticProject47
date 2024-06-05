@@ -97,16 +97,7 @@ exports.signUpUser = async (username, password, email, phoneNumber) =>
             console.log('Username already exists');
             return;
         }
-        if (!emailRegex.test(email)) 
-            {
-            console.log('Invalid email format, please ensure it agrees with this example, example@example.com or .co.uk etc');
-            return;
-        }
-        if (!phoneRegex.test(phoneNumber)) 
-        {
-            console.log('Invalid phone number format, ensure it is 11 digits long, it may need to start with a 0');
-            return;
-        }
+        
             const newUser = new User({accountLevel: isAdmin, username: username, password: passwordHashed, email: email, phoneNumber: phoneNumber});
             const savedUser = await newUser.save();
     } 
