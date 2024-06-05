@@ -19,12 +19,13 @@ html
       li 
         a(class = "nav_option", href='charities') Charities
       li 
-      if session.isLoggedIn != true
-        a(class = "nav_option", href='login') Sign in 
-      else 
-        a(class = "nav_option", href='login' ) Sign out
-         form(action='logout', method='POST', id="logout_button")
-          input(type="submit", name="logout", value="Logout", id="logout_input")
+    div(class = "nav_accounts")
+        if session.isLoggedIn != true
+          a(class = "nav_option", href='login', id = "signIn") Sign in 
+        else 
+          a(class = "nav_option", href='login', id = "signOut") ) Sign out
+          form(action='logout', method='POST', id="logout_button")
+            input(type="submit", name="logout", value="Logout", id="logout_input")
 
   body
     block content

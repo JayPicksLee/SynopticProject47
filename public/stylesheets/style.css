@@ -18,6 +18,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background-color: #a0a0a0;
  }
 
  .nav_list li{
@@ -61,4 +62,10 @@ a {
   transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
   transition-duration: 400ms;
   transition-property: width, left;
+}
+
+.nav_accounts{
+  margin-left: auto;
+  display: inline-flex;
+  align-items: right;
 }
