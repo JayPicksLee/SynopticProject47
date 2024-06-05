@@ -1,16 +1,27 @@
 h1 {
-    color: black;
     text-align: center;
 }
-.searchcontainer {    
-
-    width: 100%;
-    min-height: 100vh;
-    padding: 5%;
-    background-image: linear-gradient blue;
-    display: flex;
- 
+.searchcontainer {
+    padding: 25px;   
+    width: 250px;
 }
-.search-bar {
-
+.marketimg { 
+    max-width: 100%; /* Ensure images fit within the box */
+    height: auto; /* Maintain aspect ratio */
+    
+}
+.item-box {
+    border: 1px solid #ccc; /* Border around the box */
+    padding: 10px; /* Space inside the box */
+    text-align: center; /* Center align text */
+    width: 200px; /* Set a fixed width for each box */
+    box-sizing: border-box; 
+    flex: 0 1 auto;
+    
+}
+.item-container {
+    display: flex; /* Use flexbox */
+    flex-wrap: wrap-reverse; /* Enable wrapping */
+    gap: 10px; /* Space between the boxes */
+    justify-content: center; /* Center the boxes horizontally */
 }
