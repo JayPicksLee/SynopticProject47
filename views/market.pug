@@ -3,13 +3,35 @@ extends layout
 block content   
     head 
     link(rel='stylesheet', href='/stylesheets/market.css')
-    h1 Welcome to the market
-    div(class = "searchcontainer" )
-        search
-            form(action="./search/")
-                input(type="search")                  
-    head 
- 
-    main
-        div
+    h1 Welcome to the market             
+
+    body
+        section
+            div(class = "searchcontainer" )
+                search
+                    form(action="./search/")
+                        input(type="search")   
+        div(class="item-container")
+            div(class="item-box")                   
+                img(src="/images/firewood.jpg" class="marketimg")
+                p Firewood
+            div(class="item-box")
+                img(src="/images/bamboo.jpg" class="marketimg")
+                p Bamboo
+            div(class="item-box")
+                img(src="/images/rattan.jpg" class="marketimg")
+                p Rattan
+            div(class="item-box")
+                img(src="/images/mushroom.jpg" class="marketimg")
+                p Mushroom
+            div(class="item-box")
+                img(src="/images/flower.jpg" class="marketimg")
+                p Jelly flower
+            div(class="item-box")
+                img(src="/images/fuel.jpg" class="marketimg")
+                p Fuel
+
+
+
+        
 
