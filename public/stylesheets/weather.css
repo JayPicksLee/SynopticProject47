@@ -1,3 +1,28 @@
 #weather_clouds{
     height:95vh;
 }
+
+.text_container {
+    display: flex;
+    height: 95vh;
+}
+
+
+.text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 20px; 
+    flex: 1;
+    color: #000; 
+}
+
+.text h3{
+    padding: 10px 0;
+    font-size: 100px;
+}
+
+.text p{
+    padding: 10px 0;
+    font-size: 30px;
+}
