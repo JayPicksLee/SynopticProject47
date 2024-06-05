@@ -22,4 +22,14 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Pu Ngaol, Here and Now' });
 });
 
+router.post(
+  '/logout',
+  (req,res)=>
+  {
+    req.session.destroy();
+    res.redirect('/');  
+
+  }
+)
+
 module.exports = router;

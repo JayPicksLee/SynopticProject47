@@ -21,4 +21,15 @@ router.get('/', function(req, res, next) {
   res.render('weather');
 });
 
+
+router.post(
+  '/logout',
+  (req,res)=>
+  {
+    req.session.destroy();
+    res.redirect('/');  
+
+  }
+)
+
 module.exports = router;
