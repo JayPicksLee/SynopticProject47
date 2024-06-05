@@ -1,4 +1,35 @@
-button{
-    width: 200px;
-    height: 100px;
+#buttonContainer{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+.homeButtons{
+    width: 800px;
+    height: 450px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-size: 64px;
+    color: aliceblue;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: black;
+}
+
+#marketButton{
+    background-image: url('/images/market.jpg');
+}
+
+#toursButton{
+    background-image: url('/images/tour guide.jpg');
+}
+
+#weatherButton{
+    background-image: url('/images/clouds.jpg');
+}
+
+#howToButton{
+    background-image: url('/images/question mark.jpg');
 }
