@@ -1,3 +1,17 @@
+h1{
+    background-image: url('/images/pu ngaol.jpg');
+    width:fill;
+    height: 820px;
+    text-align: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: aliceblue;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: black;
+    font-size: 96px;
+}
+
 #buttonContainer{
     display: flex;
     justify-content: center;
@@ -16,6 +30,14 @@
     color: aliceblue;
     -webkit-text-stroke-width: 3px;
     -webkit-text-stroke-color: black;
+    transition: filter 0.4s ease;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.homeButtons:hover {
+    filter: brightness(0.2);
 }
 
 #marketButton{
