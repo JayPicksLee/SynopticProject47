@@ -2,4 +2,11 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
+
+  div 
+   h2 Personal details
+   p Welcome #{user.username}
+  div 
+   h2 Contact info 
+   p Email: #{user.email}
+   p Phone number : #{user.phoneNumber}
