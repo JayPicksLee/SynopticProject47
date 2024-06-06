@@ -1,0 +1,121 @@
+
+.charSec{
+    padding-top: 24px;
+    padding-bottom: 24px;
+    padding-right: 6px;
+    padding-left: 11px;
+    margin-top: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    margin-left: 5px;
+    background-color: aqua;
+  }
+  
+  #leftSide{
+    float: inline-start;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    padding-right: 6px;
+    padding-left: 11px;
+    margin-top: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    margin-left: 5px;
+    display: inline-block;
+    background-color: #10abff;
+    width: 66%;
+  }
+  #desc{
+    padding-bottom: 24px;
+    padding-right: 6px;
+    padding-left: 11px;
+    margin-top: auto;
+    margin-right: 2%;
+    margin-bottom: 20px;
+    margin-left: 5px;
+    background-color: #bce8fc;
+    border-radius: 7px;
+  }
+  
+  .rightsub{
+    padding-top: 24px;
+    padding-bottom: 24px;
+    padding-right: 6px;
+    padding-left: 11px;
+    margin-top: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    margin-left: 0.5%;
+    display: inline-block;
+    width: 47%;
+    background-color: #048fa8;
+    border-radius: 15px;
+  }
+  
+  #rightSide{
+    padding-top: 24px;
+    padding-bottom: 24px;
+    padding-right: 6px;
+    padding-left: 11px;
+    margin-top: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    margin-left: 5px;
+    display: inline-block;
+    width: 30%;
+    background-color: #2c8a28;
+  }
+  
+  @media only screen and (max-width: 770px) {
+  #rightSide{
+    width: 90%;
+  }
+  
+  #leftSide{
+    width: 90%;
+  }
+  }
+  
+  
+  legend {
+    font-size: large;
+    align-self: center;
+    border-radius: 50px;
+  }
+  
+  label {
+    display: block;
+    font-size: large;
+    width: 100%;
+    text-align: left;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding-top: 10px;
+  }
+  
+  input {
+    display: block;
+    width: 95%;
+    padding: 10px;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 5px;
+    margin-right: 5px;
+    border: 1px solid #025892;
+    border-radius: 5px;
+    background-color: white;
+  }
+  #donate {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 25px;
+    margin-right: 25px;
+    min-width: 150px;
+    padding: 5px;
+    border: 1px solid #060331;
+    border-radius: 5px;
+    background-color: #179b49;
+    color: #ffffff;
+  }
