@@ -1,6 +1,7 @@
 extends layout
 
 block content
+ main
   h1= title
 
   div 
@@ -10,3 +11,10 @@ block content
    h2 Contact info 
    p Email: #{user.email}
    p Phone number : #{user.phoneNumber}
+  div 
+   h2 Newsletters
+  div
+   h2 Delete account 
+   p DELETE ACCOCUNT 
+   form(action='deleteAccount', method='POST', id="delete_button")
+    input(type="submit", name="deleteAccount", value="Delete Account", id="deleteAccount_input")

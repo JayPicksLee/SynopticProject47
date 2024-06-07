@@ -1,5 +1,27 @@
 extends layout
 
 block content
+
+ main
   h1= title
   p Welcome to #{title}
+   section(class = "admin_main_content")
+    div(class ="market")
+      h2 Manage Market
+      ul 
+      //-  each item in marketItems
+      //-   div(class = "manage_request_item")
+      //-     li(class = "list_item")
+    div(class ="market")
+      h2 Manage Tours
+      ul 
+      //-  each item in marketItems
+      //-   div(class = "manage_request_item")
+      //-     li(class = "list_item")
+    div(class ="market")
+      h2 Manage Users
+      ul 
+      //-  each item in marketItems
+      //-   div(class = "manage_request_item")
+      //-     li(class = "list_item")
+                        
