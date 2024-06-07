@@ -27,7 +27,8 @@ router.get('/', function(req, res, next) {
 
 router.post('/createNewUser', (req, res, next) => {
 
-    const username = req.body.username;
+    const firstName = req.body.firstName;
+    const lastName = req.body.lastName;
     const password = req.body.password;
   
     const email = req.body.email;
@@ -35,7 +36,7 @@ router.post('/createNewUser', (req, res, next) => {
   
     try 
     {
-        usermodel.signUpUser(username, password, email, phoneNumber);
+        usermodel.signUpUser(firstName, lastName, password, email, phoneNumber);
         
         console.log("Signup successful");
         res.redirect('/login');

@@ -5,7 +5,8 @@ const Schema = mongoose.Schema;
 
 const UserSchema = new Schema({
     accountLevel: Boolean,
-    username: String,
+    firstName: String,
+    lastName: String,
     password: String,
     email: String,
     phoneNumber: String,
@@ -25,22 +26,22 @@ exports.getUserById= async (Id)=>{
     return user;
 }
 
-exports.getUserID=async (username)=>{
-    const id = await User.findOne({username: username})
+exports.getUserID=async (email)=>{
+    const id = await User.findOne({email: email})
 
     return id.id;
 }
 
-exports.getUserStatus=async (username)=>{
-    const level = await User.findOne({username: username})
+exports.getUserStatus=async (email)=>{
+    const level = await User.findOne({email: email})
 
     return level.accountLevel;
 }
 
-exports.checkExists = async (username)=>{
+exports.checkExists = async (email)=>{
     try {
 
-        let user = await User.findOne({username: username})
+        let user = await User.findOne({email: email})
         let check = false;
 
         if(user !== null){
@@ -54,11 +55,11 @@ exports.checkExists = async (username)=>{
     }
 };
 
-exports.checkLoginDetails = async (username, password)=>{
+exports.checkLoginDetails = async (email, password)=>{
 
     try {
         
-        let user = await User.findOne({username: username})
+        let user = await User.findOne({email: email})
 
         if (!user || !(await bcrypt.compare(password, user.password))) {
             return false;
@@ -71,7 +72,7 @@ exports.checkLoginDetails = async (username, password)=>{
 };
 
 
-exports.signUpUser = async (username, password, email, phoneNumber) => 
+exports.signUpUser = async (firstName, lastName, password, email, phoneNumber) => 
     {
     try 
     {
@@ -79,7 +80,7 @@ exports.signUpUser = async (username, password, email, phoneNumber) =>
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         const phoneRegex = /^\d{11}$/;
 
-        const userExists = await User.findOne({username: username})
+        const userExists = await User.findOne({email: email})
 
         let check = false;
 
@@ -94,11 +95,11 @@ exports.signUpUser = async (username, password, email, phoneNumber) =>
 
         if (check) 
         {
-            console.log('Username already exists');
+            console.log('Email already exists');
             return;
         }
         
-            const newUser = new User({accountLevel: isAdmin, username: username, password: passwordHashed, email: email, phoneNumber: phoneNumber});
+            const newUser = new User({accountLevel: isAdmin, firstName: firstName, lastName: lastName, password: passwordHashed, email: email, phoneNumber: phoneNumber});
             const savedUser = await newUser.save();
     } 
     catch (error) 

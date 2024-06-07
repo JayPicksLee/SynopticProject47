@@ -28,24 +28,24 @@ router.post(
     '/loginRequest', 
     async (req, res) => {
 
-    const username = req.body.username;
+    const email = req.body.email;
     const password = req.body.password;
   
     try {
       //Checking if the username inputted exists
-      const exists = await usermodel.checkExists(username);
+      const exists = await usermodel.checkExists(email);
   
       if (exists) {
   
-        const userID = await usermodel.getUserID(username);
+        const userID = await usermodel.getUserID(email);
         req.session.userID = userID;
         req.session.isLoggedIn = true;
         //Checking user details
-        const user = await usermodel.checkLoginDetails(username, password);
+        const user = await usermodel.checkLoginDetails(email, password);
   
         if (user) {
           
-          const level = await usermodel.getUserStatus(username);
+          const level = await usermodel.getUserStatus(email);
           //Checking user status to differentiate user and admin
           if (level) { 
   
