@@ -93,6 +93,21 @@ a{
     color: aliceblue;
 }
 
+#howToOverlayText{
+    position: absolute;
+    top: 124%;
+    left: 76.5%;
+    font-size: 32px;
+    color: transparent;
+    text-align: left;
+    font-family: fantasy;
+    line-height: 1.5;
+}
+
+#howToButton:hover ~ #howToOverlayText{
+    color: aliceblue;
+}
+
 #marketButton{
     background-image: url('/images/market.jpg');
 }
