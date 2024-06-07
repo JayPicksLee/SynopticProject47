@@ -19,8 +19,8 @@ exports.getUsers= async ()=>{
     return all;
 }
 
-exports.getUser= async (username)=>{
-    const user = await User.findOne({username:username})
+exports.getUserById= async (Id)=>{
+    const user = await User.findById({_id: Id})
 
     return user;
 }
