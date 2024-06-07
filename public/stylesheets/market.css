@@ -2,13 +2,18 @@ h1 {
     text-align: center;
 }
 .searchcontainer {
-    padding: 25px;   
-    width: 250px;
+    padding: 25px;
+    text-align: center;
+}
+#searchbar {
+    align-content: center;
+    height: 25px;
+    width: 1250px;
 }
 .marketimg { 
     max-width: 100%;
     height: auto; 
-    
+    transition: transform 330ms ease-in-out;
 }
 .item-box {
     border: 1px solid #ccc; 
@@ -16,12 +21,17 @@ h1 {
     text-align: center; 
     width: 200px; 
     box-sizing: border-box; 
-    flex: 0 1 auto;
-    
+    flex: 1 1 auto;
+    transition: background-color 0.5s;
+}
+.item-box:hover{
+    flex: 2 1 auto;
+    background-color: rgba(128, 128, 128, 0.33);
+
 }
 .item-container {
     display: flex; 
     flex-wrap: wrap-reverse;
     gap: 10px; 
-    justify-content: center;
+    justify-content: space-around;
 }
