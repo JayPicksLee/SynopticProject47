@@ -51,7 +51,7 @@ router.post('/AddTour', (req, res) =>{
   const capacity = req.body.newCapacity;
 
   tourModel.createTour(tourGuide,destination,description, price, capacity);
-  
+
   res.redirect('/admin');
 
 })
@@ -84,4 +84,17 @@ router.post('/DeleteItem', (req, res) =>{
   res.redirect('/admin');
 
 });
+
+router.post('/deleteUserAccount', (req,res) =>{
+  const userId  = {_id: req.body.id};
+  try {
+    userModel.deleteUserAccount(userId);
+    res.redirect('/admin');
+
+
+  } catch (error) {
+    
+  }
+});
+
 module.exports = router;

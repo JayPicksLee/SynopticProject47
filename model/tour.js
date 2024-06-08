@@ -52,3 +52,4 @@ exports.deleteTour = async (tourId)=>{
         console.log("ERROR DELETEING TOUR");
     }
 }
+

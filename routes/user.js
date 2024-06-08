@@ -27,4 +27,17 @@ router.get('/', async function(req, res, next) {
   res.render('user', {user: userInfo});
 });
 
+router.post('/deleteUserAccount', (req,res) =>{
+  const userId  = {_id: req.body.id};
+  try {
+    
+    userModel.deleteUserAccount(userId);
+    res.redirect('/');
+
+
+  } catch (error) {
+    
+  }
+});
+
 module.exports = router;
