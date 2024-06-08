@@ -30,4 +30,15 @@ router.get('/', async function(req, res, next) {
   res.render('admin', {users: user, tours: tour, items: item});
 });
 
+router.post('/AddItem', (req, res) =>{
+
+  const name = req.body.newItemName;
+  const price = req.body.newItemPrice;
+  const type = req.body.newItemType;
+  const availability = req.body.newItemAvailability;
+
+  marketItemModel.createItem(name,price,type, availability);
+  res.redirect('/admin');
+
+});
 module.exports = router;
