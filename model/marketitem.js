@@ -4,8 +4,8 @@ const bcrypt = require("bcrypt");
 const Schema = mongoose.Schema;
 
 const marketItemSchema = new Schema({
-    price: String,
     name: String,
+    price: String,
     type: String,
     availability: String,
 });
@@ -23,24 +23,18 @@ exports.getItems=async ()=>{
 }
 
 
-exports.createItem = async (price, name, type, availability) => {
+exports.createItem = async (name, price, type, availability) => {
     try {
-        const price = price;
-        const name = name;
-        const type = type;
-        const availability = availability;
 
-
-        const newItem = new Item({
-            price: price,
+        const newItem = new Items({
             name: name, 
+            price: price,
             type: type,
             availability: availability});
-
-              
+            
        const savedItem = await newItem.save();
         
     } catch (error) {
-        throw new Error('Error saving request data: ' + error.message);
+        throw new Error('Error saving item data: ' + error.message);
     }
 }

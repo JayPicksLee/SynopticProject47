@@ -23,7 +23,8 @@ block content
 
         label(for="newItemAvailability") Availability
         input(type="text", name ="newItemAvailability")
-        
+        button(type="submit") Add
+
       ul 
        each item in items
         div(class = "tour")
@@ -32,7 +33,9 @@ block content
           p price: #{item.price}
           p type: #{item.type}
           p availability: #{item.availability}
-
+          form(action='/admin/deleteItem', method='POST', class = "button")
+            input(type="hidden", name ="id", value = item._id)
+            button(type = "submit") Delete Item
 
     div(class ="tours")
       h2 Manage Tours
