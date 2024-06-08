@@ -3,10 +3,27 @@ extends layout
 block content
 
  main
+  
    h1 ADMIN PAGE
    section(class = "admin_main_content")
+
     div(class ="market")
       h2 Manage Market
+      button(onclick="showNewMarketItemDialog()", id = "newMarketItem") Add new item
+      dialog(id="newItemDialog")
+       form(action='/admin/AddItem', method='POST')
+        label(for="newItemName") Name
+        input(type="text", name ="newItemName")
+
+        label(for="newItemPrice") Price
+        input(type="text", name ="newItemPrice")
+
+        label(for="newItemType") Type
+        input(type="text", name ="newItemType")
+
+        label(for="newItemAvailability") Availability
+        input(type="text", name ="newItemAvailability")
+        
       ul 
        each item in items
         div(class = "tour")
@@ -15,9 +32,8 @@ block content
           p price: #{item.price}
           p type: #{item.type}
           p availability: #{item.availability}
-      //-  each item in marketItems
-      //-   div(class = "manage_request_item")
-      //-     li(class = "list_item")
+
+
     div(class ="tours")
       h2 Manage Tours
       ul 
@@ -28,9 +44,7 @@ block content
            p Description: #{tour.description}
            p Price: #{tour.price}
            p Capacity: #{tour.capacity}
-      //-  each item in marketItems
-      //-   div(class = "manage_request_item")
-      //-     li(class = "list_item")
+
     div(class ="users")
       h2 Manage Users
       ul 
@@ -41,7 +55,4 @@ block content
           form(action="/admin/deleteUserAccount", method="POST")
             input(type="hidden", name="userId", value=user._id)
             button(type="submit") Delete Account
-      //-  each item in marketItems
-      //-   div(class = "manage_request_item")
-      //-     li(class = "list_item")
-                        
+    script(src="/javascripts/adminCS.js")
