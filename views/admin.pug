@@ -3,19 +3,31 @@ extends layout
 block content
 
  main
-  h1= title
-  p Welcome to #{title}
+   h1 ADMIN PAGE
    section(class = "admin_main_content")
     div(class ="market")
       h2 Manage Market
       ul 
+       each item in items
+        div(class = "tour")
+         li 
+          p Name: #{item.name}
+          p price: #{item.price}
+          p type: #{item.type}
+          p availability: #{item.availability}
       //-  each item in marketItems
       //-   div(class = "manage_request_item")
       //-     li(class = "list_item")
     div(class ="tours")
       h2 Manage Tours
       ul 
- 
+        each tour in tours
+          div(class = "tour")
+           p Tour guide: #{tour.tourGuide}
+           p Destination: #{tour.destination}
+           p Description: #{tour.description}
+           p Price: #{tour.price}
+           p Capacity: #{tour.capacity}
       //-  each item in marketItems
       //-   div(class = "manage_request_item")
       //-     li(class = "list_item")
