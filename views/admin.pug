@@ -9,7 +9,7 @@ block content
 
     div(class ="market")
       h2 Manage Market
-      button(onclick="showNewMarketItemDialog()", id = "newMarketItem") Add new item
+      button(onclick="showNewMarketItemDialog()", id = "newButton") Add new item
       dialog(id="newItemDialog")
        form(action='/admin/AddItem', method='POST')
         label(for="newItemName") Name
@@ -39,14 +39,39 @@ block content
 
     div(class ="tours")
       h2 Manage Tours
+      button(onclick="showNewTourDialog()", id = "newButton") Add new tour
+      dialog(id="newTourDialog")
+       form(action='/admin/AddTour', method='POST')
+        label(for="newTourGuide") Tour guide
+        input(type="text", name ="newTourGuide")
+
+        label(for="newDestination") Destination
+        input(type="text", name ="newDestination")
+
+        label(for="newDescription") Description
+        input(type="text", name ="newDescription")
+
+        label(for="newPrice") Price
+        input(type="text", name ="newPrice")
+
+        label(for="newCapacity") Capacity
+        input(type="text", name ="newCapacity")
+
+        button(type="submit") Add
+
+
       ul 
         each tour in tours
           div(class = "tour")
-           p Tour guide: #{tour.tourGuide}
-           p Destination: #{tour.destination}
-           p Description: #{tour.description}
-           p Price: #{tour.price}
-           p Capacity: #{tour.capacity}
+           li
+            p Tour guide: #{tour.tourGuide}
+            p Destination: #{tour.destination}
+            p Description: #{tour.description}
+            p Price: #{tour.price}
+            p Capacity: #{tour.capacity}
+            form(action='/admin/deleteTour', method='POST', class = "button")
+             input(type="hidden", name ="id", value = tour._id)
+             button(type = "submit") Delete Tour
 
     div(class ="users")
       h2 Manage Users

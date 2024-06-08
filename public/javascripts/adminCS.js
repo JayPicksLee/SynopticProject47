@@ -1,8 +1,13 @@
 
 const marketItemDialog = document.getElementById("newItemDialog")
+const tourDialog = document.getElementById("newTourDialog")
 
 function showNewMarketItemDialog(){
-    console.log("HELLOO");
-    console.log(marketItemDialog);
     marketItemDialog.showModal();
 }
+
+function showNewTourDialog(){
+    tourDialog.showModal();
+}
+
+
