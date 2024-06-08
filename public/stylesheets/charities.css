@@ -1,31 +1,42 @@
+.pageTitle{
+    text-decoration: underline;
+    padding-top: 24px;
+    padding-bottom: auto;
+    padding-right: 3px;
+    padding-left: 11px;
+    margin-top: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    margin-left: 10px;
+}
 
 .charSec{
     padding-top: 24px;
-    padding-bottom: 24px;
-    padding-right: 6px;
+    padding-bottom: auto;
+    padding-right: 3px;
     padding-left: 11px;
     margin-top: auto;
     margin-right: auto;
     margin-bottom: 20px;
     margin-left: 5px;
-    background-color: aqua;
   }
   
   #leftSide{
     float: inline-start;
-    padding-top: 24px;
+    padding-top: 2px;
     padding-bottom: 24px;
-    padding-right: 6px;
-    padding-left: 11px;
+    padding-right: 0.5%;
+    padding-left: 0.5%;
     margin-top: auto;
     margin-right: auto;
     margin-bottom: 20px;
-    margin-left: 5px;
-    display: inline-block;
-    background-color: #10abff;
+    margin-left: 0.25%;
+    background-color: rgb(168, 168, 168);
+    border-radius: 7px;
     width: 66%;
   }
   #desc{
+    padding-top: 1%;
     padding-bottom: 24px;
     padding-right: 6px;
     padding-left: 11px;
@@ -33,24 +44,53 @@
     margin-right: 2%;
     margin-bottom: 20px;
     margin-left: 5px;
-    background-color: #bce8fc;
+    background-color: #ddeff7;
     border-radius: 7px;
   }
+
+  .showNav {
+    height: 250px;
+    float: right;
+    border-radius: 5px;
+}
   
   .rightsub{
-    padding-top: 24px;
+    padding-top: 2px;
     padding-bottom: 24px;
-    padding-right: 6px;
-    padding-left: 11px;
+    padding-right: 0.5%;
+    padding-left: 0.5%;
     margin-top: auto;
     margin-right: auto;
     margin-bottom: 20px;
-    margin-left: 0.5%;
+    margin-left: 0.25%;
     display: inline-block;
     width: 47%;
-    background-color: #048fa8;
+    background-color: #63a2ad;
     border-radius: 15px;
   }
+  .container { 
+    background-color: rgb(192, 192, 192); 
+    width: 100%; 
+    border-radius: 15px; 
+} 
+
+.raised { 
+    background-color: rgb(49, 201, 3); 
+    color: white; 
+    padding: 1%; 
+    text-align: right; 
+    font-size: 20px; 
+    border-radius: 15px; 
+    width: 70%;
+} 
+
+.leftHeader{
+    text-decoration: underline;
+}
+
+.currentMile{
+    text-align: center;
+}
   
   #rightSide{
     padding-top: 24px;
@@ -58,15 +98,16 @@
     padding-right: 6px;
     padding-left: 11px;
     margin-top: auto;
-    margin-right: auto;
+    margin-right: 0.5%;
     margin-bottom: 20px;
-    margin-left: 5px;
+    margin-left: 0.1%;
     display: inline-block;
     width: 30%;
-    background-color: #2c8a28;
+    background-color: #60835f;
+    border-radius: 7px;
   }
   
-  @media only screen and (max-width: 770px) {
+  @media only screen and (max-width: 1000px) {
   #rightSide{
     width: 90%;
   }
@@ -74,9 +115,13 @@
   #leftSide{
     width: 90%;
   }
+  .rightsub{
+    width: 90%;
+  }
   }
   
-  
+
+
   legend {
     font-size: large;
     align-self: center;
@@ -107,10 +152,22 @@
     border-radius: 5px;
     background-color: white;
   }
+  select{
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 5px;
+    margin-right: 5px;
+    border: 1px solid #025892;
+    border-radius: 5px;
+    background-color: white;
+  }
   #donate {
     margin-top: 2%;
     margin-bottom: 2%;
-    margin-left: 25px;
+    margin-left: 5px;
     margin-right: 25px;
     min-width: 150px;
     padding: 5px;
