@@ -3,28 +3,45 @@ extends layout
 block content
     head
     link(rel='stylesheet', href='/stylesheets/charities.css')
-    h1 Charity Page
+    h1(class="pageTitle") Charity Page
     section(class = "charSec") 
         div(id = "leftSide")
+            h1(class ="leftHeader") Why it Matters
             p(id ="desc") charity help Phasellus rhoncus ipsum mi, id semper felis aliquet sit amet. Curabitur quam metus, faucibus at consequat eu, interdum eu nulla. Sed quis nisl pretium, hendrerit odio eu, malesuada odio. Ut rhoncus urna sit amet ante tempor semper. Proin finibus mi orci, in tempus justo pretium a. Nam sagittis justo eu ligula pulvinar commodo. Duis ac libero erat. Ut imperdiet nibh massa. Donec ultrices facilisis dapibus. Donec venenatis, lectus ac sollicitudin ullamcorper, lorem turpis dapibus purus, et aliquam enim justo vitae libero. Curabitur nulla massa, gravida nec elit quis, consequat convallis sapien. Mauris semper tortor eu tortor sagittis, eu semper odio accumsan. Phasellus pellentesque eget turpis iaculis fringilla. Suspendisse porta augue diam, sit amet volutpat magna maximus sed. Phasellus laoreet sed arcu facilisis pellentesque. Aliquam tempus sem eu nunc consectetur tincidunt.
+          
+            h1(class ="leftHeader") Next Milestone
+
+            h3(class= "currentMile") New road to hospital
+
+            div(class = "container") 
+                div(class = "raised")   70%
+            h1(class="leftHeader") completed milestones   
             div(class = "rightsub")
            
-                p(class = "emaple") example 1
+                p(class = "emaple") milestone 1
 
             div(class = "rightsub")
-                 p(class = "emaple") example 2
+                 p(class = "emaple") milesotne 2  
+
+
+            
 
         div(id = "rightSide")
-             form(action="./search/"  id = "charForm")
+             form( action='charities/donationRequest', method= 'POST') 
                 fieldset 
-                    label(for="forename") first name
+                    label(for="forename") First Name
                     input(type="text" name="forename" id="forename" required)
-                    label(for="surname") last name
+                    label(for="surname") Last Name
                     input(type="text" name="surname" id="surname" required)
-                    label(for="E-mail") E-mail 
-                    input(type="email" name="E-mail" id="email" required)
-                    label(for="mobile") molile number 
-                    input(type="number" name="mobile" id="mobile" required)
-                    label(for="donation") donation ammount 
-                    input(type="number" name="donation" id="donation" required)
-                    button(id = "donate") donate
+                    label(for="email") E-mail 
+                    input(type="email" name="email" id="email" required)
+                    label(for="mobile") Mobile Phone Number 
+                    input(type="tel" name="mobile" id="mobile" required)
+                    label(for="donation") Donation Ammount 
+                    select(name="donation" id="donation" required) 
+                        option(value="£5")  £5
+                        option(value="£10") £10
+                        option(value="£25") £25
+                        option(value="£50") £50    
+                    button(id = "donate") Donate
+
