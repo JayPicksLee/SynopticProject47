@@ -41,4 +41,20 @@ router.post('/AddItem', (req, res) =>{
   res.redirect('/admin');
 
 });
+
+router.post('/DeleteItem', (req, res) =>{
+  const itemId = {_id : req.body.id};
+  try {
+    
+    marketItemModel.deleteItem(itemId);
+    res.redirect('/admin');
+
+  } catch (error) {
+    
+  }
+
+  marketItemModel.createItem(name,price,type, availability);
+  res.redirect('/admin');
+
+});
 module.exports = router;

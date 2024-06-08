@@ -38,3 +38,13 @@ exports.createItem = async (name, price, type, availability) => {
         throw new Error('Error saving item data: ' + error.message);
     }
 }
+
+exports.deleteItem = async (itemId)=>{
+    try {
+        console.log(itemId);
+        await Items.findByIdAndDelete(itemId);
+
+    } catch (error) {
+        console.log("ERROR DELETEING ITEM");
+    }
+}
