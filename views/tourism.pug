@@ -1,3 +1,44 @@
+//- extends layout
+
+//- block content
+//-     head
+//-     link(rel='stylesheet', href='/stylesheets/tourism.css')
+//-     h1 Visit Pu Ngaol
+
+//-     .intro-section
+//-         .intro-info
+//-             h2 About Pu Ngaol
+//-             p Pu Ngaol is home primarily to the Bunong people, Mondulkiri's largest indigenous group. Their ancestors have been known to live in this area of Cambodia for over 2,000 years, with their culture and language deeply rooted in the country’s natural landscape. It is also home to Khmer families, who make up the majority of the population in Cambodia. The majority of people living in Pu Ngaol, practise a subsistence lifestyle meaning everything they need to survive comes from the forest or fields nearby, and have honed responsible resource and agricultural practices over time. They live in balance with the land to ensure it is preserved for the future and play a key role in maintaining and caring for local environments and ecosystems. 
+
+//-         .intro-image
+//-             img(src="/images/pu ngaol.jpg" alt="Image of Pu Ngaol")
+
+//-     .info-section
+//-         .info-box
+//-             h2 Points of interest
+//-             p Landmarks and best places to see in the village
+//-             .poiBoxes
+//-                 .sanctuaryPP
+//-                     h2 Phnom Prich Wildlife Sanctuary
+//-                 .sanctuaryKS
+//-                     h2 Keo Seima Wildlife Sanctuary
+//-                 .river 
+//-                     h2 Ou Te River
+//-                 .hall 
+//-                     h2 Pu Ngaol Community Members Hall
+//-             button Book a tour →
+//-         br
+//-         .info-box
+//-             h2 Volunteer in Pu Ngaol
+//-             p Information on how you can get involved in volunteering in the village
+//-             button Get involved with volunteering →
+//-         br
+//-         .info-box
+//-             h2 Donate/Invest in Pu Ngaol
+//-             p How to get involved with donating and investing in the village
+//-             button Donation Page →
+
+
 extends layout
 
 block content
@@ -7,7 +48,9 @@ block content
 
     .intro-section
         .intro-info
-            p Introductory info about the village
+            h2 About Pu Ngaol
+            p Pu Ngaol is home primarily to the Bunong people, Mondulkiri's largest indigenous group. Their ancestors have been known to live in this area of Cambodia for over 2,000 years, with their culture and language deeply rooted in the country’s natural landscape. It is also home to Khmer families, who make up the majority of the population in Cambodia. The majority of people living in Pu Ngaol, practise a subsistence lifestyle meaning everything they need to survive comes from the forest or fields nearby, and have honed responsible resource and agricultural practices over time. They live in balance with the land to ensure it is preserved for the future and play a key role in maintaining and caring for local environments and ecosystems. 
+
         .intro-image
             img(src="/images/pu ngaol.jpg" alt="Image of Pu Ngaol")
 
@@ -15,11 +58,30 @@ block content
         .info-box
             h2 Points of interest
             p Landmarks and best places to see in the village
+            .poiBoxes
+                .sanctuaryPP
+                    h2 Phnom Prich Wildlife Sanctuary
+                    .hidden-info
+                        p Detailed information about Phnom Prich Wildlife Sanctuary.
+                .sanctuaryKS
+                    h2 Keo Seima Wildlife Sanctuary
+                    .hidden-info
+                        p Detailed information about Keo Seima Wildlife Sanctuary.
+                .river 
+                    h2 Ou Te River
+                    .hidden-info
+                        p Detailed information about Ou Te River.
+                .hall 
+                    h2 Pu Ngaol Community Hall
+                    .hidden-info
+                        p Detailed information about Pu Ngaol Community Members Hall.
             button Book a tour →
+        br
         .info-box
             h2 Volunteer in Pu Ngaol
             p Information on how you can get involved in volunteering in the village
             button Get involved with volunteering →
+        br
         .info-box
             h2 Donate/Invest in Pu Ngaol
             p How to get involved with donating and investing in the village
