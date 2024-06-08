@@ -1,4 +1,30 @@
 extends layout 
 
 block content
-    h1 Visit Pu Ngaol
+    head
+    link(rel='stylesheet', href='/stylesheets/charities.css')
+    h1 Charity Page
+    section(class = "charSec") 
+        div(id = "leftSide")
+            p(id ="desc") charity help Phasellus rhoncus ipsum mi, id semper felis aliquet sit amet. Curabitur quam metus, faucibus at consequat eu, interdum eu nulla. Sed quis nisl pretium, hendrerit odio eu, malesuada odio. Ut rhoncus urna sit amet ante tempor semper. Proin finibus mi orci, in tempus justo pretium a. Nam sagittis justo eu ligula pulvinar commodo. Duis ac libero erat. Ut imperdiet nibh massa. Donec ultrices facilisis dapibus. Donec venenatis, lectus ac sollicitudin ullamcorper, lorem turpis dapibus purus, et aliquam enim justo vitae libero. Curabitur nulla massa, gravida nec elit quis, consequat convallis sapien. Mauris semper tortor eu tortor sagittis, eu semper odio accumsan. Phasellus pellentesque eget turpis iaculis fringilla. Suspendisse porta augue diam, sit amet volutpat magna maximus sed. Phasellus laoreet sed arcu facilisis pellentesque. Aliquam tempus sem eu nunc consectetur tincidunt.
+            div(class = "rightsub")
+           
+                p(class = "emaple") example 1
+
+            div(class = "rightsub")
+                 p(class = "emaple") example 2
+
+        div(id = "rightSide")
+             form(action="./search/"  id = "charForm")
+                fieldset 
+                    label(for="forename") first name
+                    input(type="text" name="forename" id="forename" required)
+                    label(for="surname") last name
+                    input(type="text" name="surname" id="surname" required)
+                    label(for="E-mail") E-mail 
+                    input(type="email" name="E-mail" id="email" required)
+                    label(for="mobile") molile number 
+                    input(type="number" name="mobile" id="mobile" required)
+                    label(for="donation") donation ammount 
+                    input(type="number" name="donation" id="donation" required)
+                    button(id = "donate") donate

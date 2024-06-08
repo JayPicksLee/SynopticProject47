@@ -8,8 +8,12 @@ block content
      div(id = "content")
       form(action='/signup/createNewUser', method= 'POST')
 
-          label(for='username')
-          input#username(type='text' name='username' placeholder='Username' required='')
+          label(for='firstName')
+          input#username(type='text' name='firstName' placeholder='First name' required='')
+          br
+
+          label(for='lastName')
+          input#username(type='text' name='lastName' placeholder='Last name' required='')
           br
 
           label(for='password')
