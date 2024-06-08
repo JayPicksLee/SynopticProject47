@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 const userModel = require('../model/users.js');
+const tourModel = require('../model/tour.js');
+const marketItemModel = require('../model/marketitem.js');
 
 /* GET admin page */
 router.get('/', async function(req, res, next) {
@@ -10,7 +12,8 @@ router.get('/', async function(req, res, next) {
   console.log(req.session.isLoggedIn);
 
   let user = await userModel.getUsers();
-  
+  let item = await marketItemModel.getItems();
+  let tour = await tourModel.getTours();  
 
   req.sessionStore.get(req.session.id, (err, sessionData) =>{
     if(err){
@@ -24,7 +27,7 @@ router.get('/', async function(req, res, next) {
   req.session.visited = true;
   req.session.isAdmin = true;
 
-  res.render('admin', {users: user});
+  res.render('admin', {users: user, tours: tour, items: item});
 });
 
 module.exports = router;
