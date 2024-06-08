@@ -10,16 +10,35 @@ h1 {
     height: 25px;
     width: 1250px;
 }
+.introcontainer {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px; 
+    background-color: rgba(77, 73, 75, 0.51);
+    margin: 20px auto;
+    margin-bottom: 100px;
+}
+.intropicturediv {
+    text-align: right;
+}
+.introtextdiv {
+    color: white;
+    text-align: left;
+}
+
 .marketimg { 
-    max-width: 100%;
-    height: auto; 
+    width: 100px;
+    height: 100px;
     transition: transform 330ms ease-in-out;
+    margin-top: 10px;
+    border-radius: 5px;
 }
 .item-box {
     border: 1px solid #ccc; 
     padding: 10px; 
-    text-align: center; 
-    width: 200px; 
+    text-align: center;  
+    max-width: 200px;
+    height: 100%;
     box-sizing: border-box; 
     flex: 1 1 auto;
     transition: background-color 0.5s;
@@ -34,4 +53,12 @@ h1 {
     flex-wrap: wrap-reverse;
     gap: 10px; 
     justify-content: space-around;
+}
+@media only screen and (max-width: 480px){
+    body {
+        font-size: 12px;
+        margin: 0 auto;
+        display: block;
+        max-width: 100%
+    }
 }
