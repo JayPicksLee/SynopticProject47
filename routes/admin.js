@@ -42,6 +42,34 @@ router.post('/AddItem', (req, res) =>{
 
 });
 
+router.post('/AddTour', (req, res) =>{
+
+  const tourGuide = req.body.newTourGuide;
+  const destination = req.body.newDestination;
+  const description  = req.body.newDescription;
+  const price = req.body.newPrice;
+  const capacity = req.body.newCapacity;
+
+  tourModel.createTour(tourGuide,destination,description, price, capacity);
+  
+  res.redirect('/admin');
+
+})
+
+router.post('/DeleteTour', (req, res) =>{
+  
+  const tourId = {_id: req.body.id};
+  try {
+    
+    tourModel.deleteTour(tourId);
+    res.redirect('/admin');
+
+  } catch (error) {
+    
+  }
+
+})
+
 router.post('/DeleteItem', (req, res) =>{
   const itemId = {_id : req.body.id};
   try {
@@ -53,7 +81,6 @@ router.post('/DeleteItem', (req, res) =>{
     
   }
 
-  marketItemModel.createItem(name,price,type, availability);
   res.redirect('/admin');
 
 });

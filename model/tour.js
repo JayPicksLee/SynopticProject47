@@ -26,12 +26,6 @@ exports.getTours=async ()=>{
 
 exports.createTour = async (tourGuide, destination, description, price, capacity) => {
     try {
-        const tourGuide = tourGuide;
-        const destination = destination;
-        const description = description;
-        const price = price;
-        const capacity = capacity;
-
 
         const newTour = new Tour({
             tourGuide: tourGuide,
@@ -45,5 +39,16 @@ exports.createTour = async (tourGuide, destination, description, price, capacity
         
     } catch (error) {
         throw new Error('Error saving request data: ' + error.message);
+    }
+}
+
+
+exports.deleteTour = async (tourId)=>{
+    try {
+        console.log(tourId);
+        await Tour.findByIdAndDelete(tourId);
+
+    } catch (error) {
+        console.log("ERROR DELETEING TOUR");
     }
 }
