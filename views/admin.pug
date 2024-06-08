@@ -12,15 +12,23 @@ block content
       //-  each item in marketItems
       //-   div(class = "manage_request_item")
       //-     li(class = "list_item")
-    div(class ="market")
+    div(class ="tours")
       h2 Manage Tours
       ul 
+ 
       //-  each item in marketItems
       //-   div(class = "manage_request_item")
       //-     li(class = "list_item")
-    div(class ="market")
+    div(class ="users")
       h2 Manage Users
       ul 
+       each user in users 
+        div(class = "user")
+         li 
+          p Email: #{user.email}
+          form(action="/admin/deleteUserAccount", method="POST")
+            input(type="hidden", name="userId", value=user._id)
+            button(type="submit") Delete Account
       //-  each item in marketItems
       //-   div(class = "manage_request_item")
       //-     li(class = "list_item")

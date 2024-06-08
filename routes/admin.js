@@ -1,12 +1,16 @@
 var express = require('express');
 var router = express.Router();
+const userModel = require('../model/users.js');
 
 /* GET admin page */
-router.get('/', function(req, res, next) {
+router.get('/', async function(req, res, next) {
   console.log(req.session);
   console.log(req.session.id);
   console.log(req.session.userID);
   console.log(req.session.isLoggedIn);
+
+  let user = await userModel.getUsers();
+  
 
   req.sessionStore.get(req.session.id, (err, sessionData) =>{
     if(err){
@@ -20,7 +24,7 @@ router.get('/', function(req, res, next) {
   req.session.visited = true;
   req.session.isAdmin = true;
 
-  res.render('admin');
+  res.render('admin', {users: user});
 });
 
 module.exports = router;
