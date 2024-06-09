@@ -30,10 +30,9 @@ router.get('/', async function(req, res, next) {
 router.post('/deleteUserAccount', (req,res) =>{
   const userId  = {_id: req.body.id};
   try {
-    
+
     userModel.deleteUserAccount(userId);
     res.redirect('/');
-
 
   } catch (error) {
     

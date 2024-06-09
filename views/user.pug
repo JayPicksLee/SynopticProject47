@@ -1,23 +1,58 @@
 extends layout
 
 block content
+
+ link(rel='stylesheet', href = '/stylesheets/user.css')
  main
-  h1= title
+  h1 User profile
+  section(class="section")
+   div(class="wrapper")
+    header
+     h2 Personal details
+     p Update personal information
+    div(class="box")
+     div(class="content")
+      form(class="accountDetails")
+       div(class="row")
+        label(for="firstName") First name:
+        input(type="text",name= "firstName",value=user.firstName, class="inputField")
+       div(class="row")
+        label(for="lastName") Last name:
+        input(type="text", name = "lastName",value=user.lastName, class="inputField")
+       input(type="submit", name="updateDetails", value="Save", id="updateDetails_input")
+   div(class="wrapper")   
+    header
+     h2 Contact information
+     p How we will get in touch with you.
+    div(class="box")
+     div(class="content")
+      form(class="accountDetails")
+       div(class="row")
+        label(for="email") Email:
+        input(type="text",name= "email",value=user.email, class="inputField")
+       div(class="row")
+        label(for="phoneNumber") Phone number:
+        input(type="text", name = "phoneNumber",value=user.phoneNumber, class="inputField")
+   div(class="wrapper")
+    header
+     h2 Newsletters
+    div(class="box")
+     div(class="content")
+      form()
 
-  div 
-   h2 Personal details
-   p Name: #{user.firstName} #{user.lastName}
-  div 
-   h2 Contact info 
-   p Email: #{user.email}
-   p Phone number : #{user.phoneNumber}
-  div 
-   h2 Newsletters
-  div 
-   h2 Tours booked 
+   div(class="wrapper")
+    header
+     h2 Tours booked
+    div(class="box")
+     div(class="content")
 
-  div
-   h2 Delete account 
-   p DELETE ACCOCUNT 
-   form(action='/user/deleteAccount', method='POST', id="delete_button")
-    input(type="submit", name="deleteAccount", value="Delete Account", id="deleteAccount_input")
+
+   div(class="wrapper")
+    header 
+     h2 Delete account 
+     p Permanently delete your account. This cannot be undone. All information is deleted.
+
+    div(class="box")
+     div(class="content")    
+      form(action='/user/deleteAccount', method='POST', id="delete_button")
+       input(type="submit", name="deleteAccount", value="Delete Account", id="deleteAccount_input")
