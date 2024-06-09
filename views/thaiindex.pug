@@ -1,0 +1,73 @@
+extends layout
+
+block content
+  head
+  link(rel='stylesheet', href='/stylesheets/index.css')
+  h1
+    | Pu Ngaol, Here and Now
+    br
+    | 
+    br
+    | 
+    br
+    | 
+    br
+    | 
+    br
+    | ⮮ Step Into Our World ⮯
+  div(id="buttonContainer")  
+    button(class="homeButtons" id="marketButton")
+      a(href="market" class="homeButtons") ตลาด
+      br
+      | 🍎
+    button(class="homeButtons" id="toursButton" href="tourism")
+      a(href="tourism" class="homeButtons") ทัวร์
+      br
+      | 🏞️
+    button(class="homeButtons" id="weatherButton" href="weather")
+      a(href="weather" class="homeButtons") สภาพอากาศ
+      br
+      | ☀️
+    button(class="homeButtons" id="howToButton")
+      a(href="instructions" class="homeButtons") วิธีใช้
+      br
+      | ❓
+    a(id="marketOverlayText" href="market")
+      |○ ทุกอย่างธรรมชาติ
+      br
+      |○ สนับสนุนคนพึ้นที่
+      br
+      |○ เก็บเกี่ยวอย่างพอเพียง
+      br
+      |○ ราคาตรง
+      br
+      |○ ทำด้วยใจ
+      br
+      |○ กดเพื่อเข้าดู!
+    a(id="toursOverlayText" href="tourism")
+      |○ ข้อมูลพึ้นที่
+      br
+      |○ จุดหน้าสนใจ
+      br
+      |○ ทัวร์มืออาชีพ
+      br
+      |○ ราคาตรง
+      br
+      |○ สนับสนุนคนพึ้นที่
+      br
+      |○ กดเพื่อเข้าดู!
+    a(id="weatherOverlayText" href="weather")
+      |○ ตรวจดูน้ำท่วม
+      br
+      |○ ตรวจดูความแล้ง
+      br
+      |○ เตรียมตัว
+      br
+      |○ กดเพื่อเข้าดู!
+    a(id="howToOverlayText" href="instructions")
+      |○ วิธีใช้เวป
+      br
+      |○ กดดูเพื่อถามคำถาม
+      br
+      |○ กดเพื่อเข้าดู!
+      
