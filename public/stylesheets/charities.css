@@ -1,3 +1,4 @@
+
 .pageTitle{
     text-decoration: underline;
     padding-top: 24px;
@@ -8,7 +9,9 @@
     margin-right: auto;
     margin-bottom: 20px;
     margin-left: 10px;
+    text-align: center;
 }
+
 
 .charSec{
     padding-top: 24px;
@@ -48,10 +51,15 @@
     border-radius: 7px;
   }
 
-  .showNav {
-    height: 250px;
-    float: right;
-    border-radius: 5px;
+  .payment{
+    display: none;  }
+
+  .showForm {
+    display: block;
+}
+
+.showForm2{
+  display: none;
 }
   
   .rightsub{
@@ -176,3 +184,17 @@
     background-color: #179b49;
     color: #ffffff;
   }
+
+  #pay{
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 5px;
+    margin-right: 25px;
+    min-width: 150px;
+    padding: 5px;
+    border: 1px solid #060331;
+    border-radius: 5px;
+    background-color: #179b49;
+    color: #ffffff;
+  }
+
