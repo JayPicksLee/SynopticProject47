@@ -47,7 +47,7 @@ h1 {
     flex: 0 1 10vw;
     transition: all 0.33s;
     min-width: 10vw;
-    
+    margin-bottom: 25px;
 }
 .item-box:hover{
     flex: 0 1 12vw;
