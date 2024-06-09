@@ -1,5 +1,4 @@
 extends layout
-
 block content   
 
     head 
@@ -13,9 +12,10 @@ block content
                 input(type="submit")  
         div(class="introcontainer")
             div(class="introtextdiv")
-                p Every bit of pennies will goes into rebuilding funds for the village
+                p Every bit of pennies counts!
+                p This market page will display items that are available in this village, all purchases will contribute to the effort of rebuilding this village
             div(class="intropicturediv")
-                img(src="/images/people.jpg")
+                img(src="/images/people.jpg" id="intropic")
         div(class="item-container")
             each item in items
                 div(class="item-box")                 
