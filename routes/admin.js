@@ -23,11 +23,16 @@ router.get('/', async function(req, res, next) {
     console.log(sessionData);
   });
 
+  if(!req.session.isLoggedIn || req.session.isAdmin== false ){
+    return res.redirect("/login");
+  }else{
+
+
   //Tracking if the visitor has visited the website before, normally the session id resets upon every visit to the main page. Now we can watch the visitor and what they do.
   req.session.visited = true;
-  req.session.isAdmin = true;
 
   res.render('admin', {users: user, tours: tour, items: item});
+  }
 });
 
 router.post('/AddItem', (req, res) =>{

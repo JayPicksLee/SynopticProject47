@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
     console.log(req.session.id);
     console.log(req.session.userID);
     console.log(req.session.isLoggedIn);
-
+    req.session.isAdmin = false;
     req.sessionStore.get(req.session.id, (err, sessionData) =>{
       if(err){
         console.log(err);
@@ -48,10 +48,11 @@ router.post(
           const level = await usermodel.getUserStatus(email);
           //Checking user status to differentiate user and admin
           if (level) { 
-  
+            req.session.isAdmin = true;
+
             res.redirect('/admin');
           } else {
-  
+            req.session.isAdmin = false;
             res.redirect('/user');
           }
   

@@ -8,6 +8,7 @@ router.get('/', async function(req, res, next) {
   console.log(req.session.id);
   console.log(req.session.userID);
   console.log(req.session.isLoggedIn);
+  
 
   req.sessionStore.get(req.session.id, (err, sessionData) =>{
     if(err){
@@ -17,6 +18,9 @@ router.get('/', async function(req, res, next) {
     console.log(sessionData);
   });
 
+  if(!req.session.isLoggedIn){
+    return res.redirect("/login");
+  }else{
 
   //Tracking if the visitor has visited the website before, normally the session id resets upon every visit to the main page. Now we can watch the visitor and what they do.
   req.session.visited = true;
@@ -25,6 +29,8 @@ router.get('/', async function(req, res, next) {
   console.log("USER IS" + userInfo);
 
   res.render('user', {user: userInfo});
+  }
+
 });
 
 router.post('/deleteUserAccount', (req,res) =>{
