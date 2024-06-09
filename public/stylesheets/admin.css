@@ -1,0 +1,29 @@
+.admin_main_content {
+    margin-top: 2%;
+    margin-left: auto;
+    margin-right: auto; 
+    display: flex;
+    width: 80%;
+    border-radius: 10px;
+    justify-content: space-between;
+    padding:2%;
+
+  }
+  button, input[type="submit"] {
+    width:fit-content;
+    padding: 10px;
+    border-radius: 5px;
+    border:none;
+    background-color: #4b4b4b;
+    color: #fff;
+    cursor: pointer;
+    margin-left: 4%;
+  }
+  
+  button:hover, input[type="submit"]:hover {
+    background-color: #3b3b3b;
+  }
+  
+  .market, .tours, .user {
+    margin-bottom: 40px; 
+  }
