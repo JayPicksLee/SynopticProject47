@@ -27,8 +27,7 @@ h1 {
 }
 
 .marketimg { 
-    width: 100px;
-    height: 100px;
+    width: 100%;
     transition: transform 330ms ease-in-out;
     margin-top: 10px;
     border-radius: 5px;
@@ -37,22 +36,26 @@ h1 {
     border: 1px solid #ccc; 
     padding: 10px; 
     text-align: center;  
-    max-width: 200px;
+    width: 150px;
+    max-width: 33vw;
     height: 100%;
     box-sizing: border-box; 
-    flex: 1 1 auto;
-    transition: background-color 0.5s;
+    flex: 0 1 10vw;
+    transition: all 0.33s;
+    min-width: 10vw;
+    
 }
 .item-box:hover{
-    flex: 2 1 auto;
+    flex: 0 1 12vw;
     background-color: rgba(128, 128, 128, 0.33);
-
+    
 }
 .item-container {
     display: flex; 
-    flex-wrap: wrap-reverse;
-    gap: 10px; 
-    justify-content: space-around;
+    flex-wrap: wrap; 
+    justify-content: center;
+    width: 90vw;
+    gap: 10px;
 }
 @media only screen and (max-width: 480px){
     body {
