@@ -1,3 +1,11 @@
+
+body{
+    background-image: url('/images/cloud_wallpaper.jpg');
+    background-size: cover; 
+    background-position: center; 
+}
+
+
 #weather_clouds{
     height:95vh;
 }
@@ -12,9 +20,13 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-left: 20px; 
     flex: 1;
     color: #000; 
+    height: fit-content;
+    width: auto;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(206, 229, 255, 0.5);
 }
 
 .text h3{
@@ -26,6 +38,11 @@
     padding: 10px 0;
     font-size: 30px;
 }
+
+.text_container {
+    text-align: center;
+}
+
 
 
 /* SmartPhone View */
