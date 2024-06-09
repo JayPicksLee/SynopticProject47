@@ -1,16 +1,16 @@
-body {
+ body {
     
     margin: 0;
     height: 100vh;
     
-  }
+ }
 
   main{
     display: flex;
     align-items: center;
     justify-content: center;
   }
-  .login{
+  .signup{
     max-width: 250px;
     margin: 0 auto;
     text-align: center;
@@ -36,13 +36,13 @@ body {
     z-index: -1;
   }
 
-  .login-form{
+  .signup-form{
     display: flex;
     flex-direction: column;
     margin-top: 20px;
   }
 
-  .login-input{
+  .signup-input{
     padding: 10px;
     margin-top: 25px;
     border: none;
@@ -51,7 +51,7 @@ body {
     cursor: pointer;
   }
 
-  .login-button{
+  .signup-button{
     padding: 10px;
     margin-top: 25px;
     border: none;

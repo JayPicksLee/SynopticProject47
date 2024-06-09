@@ -1,34 +1,34 @@
 extends layout
 
 block content
+ link(rel='stylesheet', href='/stylesheets/signup.css')
+ main
     h1 Signup
     
-    div(id = "above")
-     h1="SignUp to PMS"
-     div(id = "content")
-      form(action='/signup/createNewUser', method= 'POST')
-
+    div(class = "wrapper")
+     div(class = "signup")
+      form(action='/signup/createNewUser', method= 'POST', class="signup-form")
           label(for='firstName')
-          input#username(type='text' name='firstName' placeholder='First name' required='')
+          input#username(type='text' name='firstName' placeholder='First name', class ="signup-input",required='')
           br
 
           label(for='lastName')
-          input#username(type='text' name='lastName' placeholder='Last name' required='')
+          input#username(type='text' name='lastName' placeholder='Last name', class ="signup-input",  required='')
           br
 
           label(for='password')
-          input#password(type='password' name='password' placeholder='Password' required='')
+          input#password(type='password' name='password' placeholder='Password'  class ="signup-input", required='')
           br
 
           label(for='email')
-          input#email(type='text' name='email' placeholder='Email' required='')
+          input#email(type='text' name='email' placeholder='Email' class ="signup-input", required='')
           br
 
           label(for='phoneNumber')
-          input#phoneNumber(type='text' name='phoneNumber' placeholder='Phone Number' required='')
+          input#phoneNumber(type='text' name='phoneNumber' placeholder='Phone Number' class ="signup-input" required='')
           br
           
-          input(type='submit' value='Sign Up')
+          input(type='submit' value='Sign Up', class="signup-button")
           if errorMessage
             p.error= errorMessage
       p 
