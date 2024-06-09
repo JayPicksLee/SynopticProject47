@@ -27,7 +27,7 @@ block content
             
 
         div(id = "rightSide")
-             form( action='charities/donationRequest', method= 'POST') 
+             form( action='charities/donationRequest', method= 'POST' id = "donation" class = "form2") 
                 fieldset 
                     label(for="forename") First Name
                     input(type="text" name="forename" id="forename" required)
@@ -44,4 +44,16 @@ block content
                         option(value="£25") £25
                         option(value="£50") £50    
                     button(id = "donate") Donate
+             form( action='charities/donationRequest', method= 'POST' class = "payment" id = "payment") 
+                fieldset 
+                    label(for="cardNum") Card number
+                    input(type="number" name="cardNum" id="cardNum" required)
+                    label(for="cardName") Name on card
+                    input(type="text" name="cardName" id="cardName" required)
+                    label(for="exdate") experatin date
+                    input(type="date" name="exdate" id="exdate" required)
+                    label(for="code") security code 
+                    input(type="number" name="code" id="code" required)  
+                    button(id = "pay") confirm
+        script(src="/javascripts/request.js")
 
