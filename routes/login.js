@@ -32,7 +32,7 @@ router.post(
     const password = req.body.password;
   
     try {
-      //Checking if the username inputted exists
+      //Checking if the email inputted exists
       const exists = await usermodel.checkExists(email);
   
       if (exists) {

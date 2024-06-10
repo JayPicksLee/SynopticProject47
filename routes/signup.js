@@ -25,7 +25,7 @@ router.get('/', function(req, res, next) {
 });
 
 //POST METHOD createnewUser: Creates user with model function, with values in input fields.
-router.post('/createNewUser', (req, res, next) => {
+router.post('/createNewUser', async (req, res, next) => {
 
     const firstName = req.body.firstName;
     const lastName = req.body.lastName;
@@ -33,19 +33,15 @@ router.post('/createNewUser', (req, res, next) => {
   
     const email = req.body.email;
     const phoneNumber = req.body.phoneNumber;
-  
-    try 
-    {
-        usermodel.signUpUser(firstName, lastName, password, email, phoneNumber);
-        
+
+    try {
+        await usermodel.signUpUser(firstName, lastName, password, email, phoneNumber);
         console.log("Signup successful");
-        res.redirect('/login');
-        
-    } 
-    catch (error) 
-    { 
+
+    } catch (error)  { 
         res.render('signup', { errorMessage: error.message });
     }
+
   });
 
 module.exports = router;
