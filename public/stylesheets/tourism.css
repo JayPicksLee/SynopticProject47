@@ -141,7 +141,7 @@ h1 {
   flex-direction: column;
 }
 
-button {
+a.buttons {
   background: #006bff;
   color: white;
   border: none;
@@ -150,6 +150,6 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+a.buttons:hover {
   background: #0056b6;
 }
