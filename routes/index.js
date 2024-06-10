@@ -22,6 +22,7 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Pu Ngaol, Here and Now' });
 });
 
+//POST METHOD logout: method is used for all pages, upon post request from any page from signout button, destroy the current session.
 router.post(
   '/logout',
   (req,res)=>

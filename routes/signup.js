@@ -2,7 +2,8 @@ var express = require('express');
 var router = express.Router();
 const usermodel = require('../model/users.js');
 
-/* GET signup page */
+//GET METHOD: Rendering signup page upon get request
+
 router.get('/', function(req, res, next) {
     console.log(req.session);
     console.log(req.session.id);
@@ -19,12 +20,11 @@ router.get('/', function(req, res, next) {
   
     //Tracking if the visitor has visited the website before, normally the session id resets upon every visit to the main page. Now we can watch the visitor and what they do.
     req.session.visited = true;
-  
-
 
   res.render('signup');
 });
 
+//POST METHOD createnewUser: Creates user with model function, with values in input fields.
 router.post('/createNewUser', (req, res, next) => {
 
     const firstName = req.body.firstName;
