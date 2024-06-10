@@ -123,3 +123,43 @@ a{
 #howToButton{
     background-image: url('/images/question mark.jpg');
 }
+
+@media only screen and (max-width: 768px) {
+    h1{
+        font-size: 75px;
+    }
+
+    .homeButtons{
+        font-size: 36px;
+        -webkit-text-stroke-width: 2px;
+        -webkit-text-stroke-color: black;
+    }
+
+    #marketOverlayText{
+        font-size: 14px;
+        top: 135%;
+        left: 3.5%;
+        line-height: 2;
+    }
+
+    #toursOverlayText{
+        font-size: 14px;
+        top: 135%;
+        left: 28%;
+        line-height: 2;
+    }
+
+    #weatherOverlayText{
+        font-size: 14px;
+        top: 137%;
+        left: 53%;
+        line-height: 2;
+    }
+
+    #howToOverlayText{
+        font-size: 14px;
+        top: 138%;
+        left: 76.5%;
+        line-height: 2;
+    }
+}
