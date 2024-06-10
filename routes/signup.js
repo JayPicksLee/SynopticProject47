@@ -2,7 +2,8 @@ var express = require('express');
 var router = express.Router();
 const usermodel = require('../model/users.js');
 
-/* GET signup page */
+//GET METHOD: Rendering signup page upon get request
+
 router.get('/', function(req, res, next) {
     console.log(req.session);
     console.log(req.session.id);
@@ -19,13 +20,12 @@ router.get('/', function(req, res, next) {
   
     //Tracking if the visitor has visited the website before, normally the session id resets upon every visit to the main page. Now we can watch the visitor and what they do.
     req.session.visited = true;
-  
-
 
   res.render('signup');
 });
 
-router.post('/createNewUser', (req, res, next) => {
+//POST METHOD createnewUser: Creates user with model function, with values in input fields.
+router.post('/createNewUser', async (req, res, next) => {
 
     const firstName = req.body.firstName;
     const lastName = req.body.lastName;
@@ -33,19 +33,15 @@ router.post('/createNewUser', (req, res, next) => {
   
     const email = req.body.email;
     const phoneNumber = req.body.phoneNumber;
-  
-    try 
-    {
-        usermodel.signUpUser(firstName, lastName, password, email, phoneNumber);
-        
+
+    try {
+        await usermodel.signUpUser(firstName, lastName, password, email, phoneNumber);
         console.log("Signup successful");
-        res.redirect('/login');
-        
-    } 
-    catch (error) 
-    { 
+
+    } catch (error)  { 
         res.render('signup', { errorMessage: error.message });
     }
+
   });
 
 module.exports = router;

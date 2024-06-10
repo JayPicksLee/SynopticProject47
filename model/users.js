@@ -40,19 +40,17 @@ exports.getUserStatus=async (email)=>{
 
 exports.checkExists = async (email)=>{
     try {
-
         let user = await User.findOne({email: email})
-        let check = false;
 
         if(user !== null){
-            check = true;
-            return check
+            return true;
         }else{
-            return check;
+            return false;
         }
-        } catch (error) {
+    } catch (error) {
             throw new Error("Error finding username: " +error.message);
     }
+
 };
 
 exports.checkLoginDetails = async (email, password)=>{
@@ -61,7 +59,7 @@ exports.checkLoginDetails = async (email, password)=>{
         
         let user = await User.findOne({email: email})
 
-        if (!user || !(await bcrypt.compare(password, user.password))) {
+        if (!user || !bcrypt.compare(password, user.password)) {
             return false;
         }        
 
@@ -74,38 +72,30 @@ exports.checkLoginDetails = async (email, password)=>{
 
 exports.signUpUser = async (firstName, lastName, password, email, phoneNumber) => 
     {
-    try 
-    {
+        console.log("Beginning signup of user....")
         const isAdmin = false;
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         const phoneRegex = /^\d{11}$/;
 
-        const userExists = await User.findOne({email: email})
-
-        let check = false;
-
         const passwordHashed = await bcrypt.hash(password, 8);
+        console.log("Checking if user already exists...");
 
-        if(userExists !== null){
-            check = true
+        if(email.indexOf(" " > -1 )){
+            throw new Error("Email cannot have white space.");
+
+        }else if(await this.checkExists(email) == true){
+            throw new Error("Email already exists");
         }else{
-            check = false;
-        }
-        console.log(check);
+            console.log("Checking password for white space...")
+            if(password.indexOf(" ") > -1 ){
+                throw new Error("Password cannot have white space.");
+            }else{
+                const newUser = new User({accountLevel: isAdmin, firstName: firstName, lastName: lastName, password: passwordHashed, email: email, phoneNumber: phoneNumber});
+                const savedUser = await newUser.save();
 
-        if (check) 
-        {
-            console.log('Email already exists');
-            return;
+            }  
         }
-        
-            const newUser = new User({accountLevel: isAdmin, firstName: firstName, lastName: lastName, password: passwordHashed, email: email, phoneNumber: phoneNumber});
-            const savedUser = await newUser.save();
-    } 
-    catch (error) 
-    {
-        console.log('Error saving user data: ' + error.message);
-    }
+    
 }
 
 exports.displayUserAccounts = async () => 

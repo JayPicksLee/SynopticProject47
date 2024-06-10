@@ -4,7 +4,7 @@ const userModel = require('../model/users.js');
 const tourModel = require('../model/tour.js');
 const marketItemModel = require('../model/marketitem.js');
 
-/* GET admin page */
+//GET METHOD : Rendering the page with the market items, tours and users stored in the database with methods from the models.
 router.get('/', async function(req, res, next) {
   console.log(req.session);
   console.log(req.session.id);
@@ -22,7 +22,7 @@ router.get('/', async function(req, res, next) {
     }
     console.log(sessionData);
   });
-
+  //Checking if the person is logged in, or verifying their authentication as an admin
   if(!req.session.isLoggedIn || req.session.isAdmin== false ){
     return res.redirect("/login");
   }else{
@@ -35,6 +35,7 @@ router.get('/', async function(req, res, next) {
   }
 });
 
+//POST METHOD AddItem: Creating item based off inputs values from webpage upon post request.
 router.post('/AddItem', (req, res) =>{
 
   const name = req.body.newItemName;
@@ -46,7 +47,7 @@ router.post('/AddItem', (req, res) =>{
   res.redirect('/admin');
 
 });
-
+//POST METHOD AddTour: Creating tour based off inputs values from webpage upon post request.
 router.post('/AddTour', (req, res) =>{
 
   const tourGuide = req.body.newTourGuide;
@@ -59,8 +60,9 @@ router.post('/AddTour', (req, res) =>{
 
   res.redirect('/admin');
 
-})
+});
 
+//POST METHOD DeleteTour: Upon request, get id for the tour from the webpage and delete it from the database.
 router.post('/DeleteTour', (req, res) =>{
   
   const tourId = {_id: req.body.id};
@@ -74,7 +76,7 @@ router.post('/DeleteTour', (req, res) =>{
   }
 
 })
-
+//POST METHOD DeleteITem: Upon request, get id for the item from the webpage and delete it from the database.
 router.post('/DeleteItem', (req, res) =>{
   const itemId = {_id : req.body.id};
   try {
@@ -89,7 +91,7 @@ router.post('/DeleteItem', (req, res) =>{
   res.redirect('/admin');
 
 });
-
+//POST METHOD DeleteUserAccount: Upon request, get id for the user from the webpage and delete it from the database.
 router.post('/deleteUserAccount', (req,res) =>{
   const userId  = {_id: req.body.id};
   try {

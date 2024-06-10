@@ -1,0 +1,39 @@
+extends layout
+
+block content
+  link(rel='stylesheet', href='/stylesheets/booking.css')
+  h1 Book a Tour
+
+  .intro-section
+    .intro-info
+      h2 Explore Pu Ngaol with Our Guided Tours
+      p Discover the beauty and culture of Pu Ngaol with our local guides. Select a tour, choose a date, and get ready for an unforgettable experience.
+
+  .tour-list-section
+    .tour-list
+      .tour-item
+        h2 Destination 1 - £30
+        p Tour Guide: Guide 1
+        p Description of the tour
+        label
+          input(type='radio', name='tourId', value='tour1')
+          | Select this tour
+      .tour-item
+        h2 Destination 2 - £50
+        p Tour Guide: Guide 2
+        p Description of the tour
+        label
+          input(type='radio', name='tourId', value='tour2')
+          | Select this tour
+
+  .date-selection
+    form
+      label(for='date') Select Date:
+      input(type='date', id='date', name='date', required)
+      button(type='submit') Confirm Booking
+
+  .info-section
+    #confirmationMessage(style='display:none')
+      h2 Booking Confirmed!
+      p Thank you for booking a tour with us.
+

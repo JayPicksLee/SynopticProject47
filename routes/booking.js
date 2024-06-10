@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET home page. */
+/* GET booking page. */
 router.get('/', function(req, res, next) {
   console.log(req.session);
   console.log(req.session.id);
@@ -19,18 +19,7 @@ router.get('/', function(req, res, next) {
   //Tracking if the visitor has visited the website before, normally the session id resets upon every visit to the main page. Now we can watch the visitor and what they do.
   req.session.visited = true;
 
-  res.render('index', { title: 'Pu Ngaol, Here and Now' });
+  res.render('booking', { title: 'Booking Page' });
 });
-
-//POST METHOD logout: method is used for all pages, upon post request from any page from signout button, destroy the current session.
-router.post(
-  '/logout',
-  (req,res)=>
-  {
-    req.session.destroy();
-    res.redirect('/');  
-
-  }
-)
 
 module.exports = router;
