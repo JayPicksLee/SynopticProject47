@@ -7,7 +7,7 @@ block content
     section(class = "charSec") 
         div(id = "leftSide")
             h1(class ="leftHeader") Why it Matters
-            p(id ="desc") charity help Phasellus rhoncus ipsum mi, id semper felis aliquet sit amet. Curabitur quam metus, faucibus at consequat eu, interdum eu nulla. Sed quis nisl pretium, hendrerit odio eu, malesuada odio. Ut rhoncus urna sit amet ante tempor semper. Proin finibus mi orci, in tempus justo pretium a. Nam sagittis justo eu ligula pulvinar commodo. Duis ac libero erat. Ut imperdiet nibh massa. Donec ultrices facilisis dapibus. Donec venenatis, lectus ac sollicitudin ullamcorper, lorem turpis dapibus purus, et aliquam enim justo vitae libero. Curabitur nulla massa, gravida nec elit quis, consequat convallis sapien. Mauris semper tortor eu tortor sagittis, eu semper odio accumsan. Phasellus pellentesque eget turpis iaculis fringilla. Suspendisse porta augue diam, sit amet volutpat magna maximus sed. Phasellus laoreet sed arcu facilisis pellentesque. Aliquam tempus sem eu nunc consectetur tincidunt.
+            p(id ="desc") All proceeds made from the tours or marketplace go towards helping the people of Pu Ngaol. If you want to donate, directly use the form on the right to make a small donation. Your donation will go to help fund WWF Cambodia and development and partnership in action charities helping in Pu Ngaol. The proceeds will also go towards specific projects to help the locals. The progress to completing these goals can be seen below, as well as previous goals we have completed. We appreciate any donation you can give.
           
             h1(class ="leftHeader") Next Milestone
 
@@ -16,19 +16,22 @@ block content
             div(class = "container") 
                 div(class = "raised")   70%
             h1(class="leftHeader") completed milestones   
-            div(class = "rightsub")
+            div(class = "rightsubBridge")
            
-                p(class = "emaple") milestone 1
-
-            div(class = "rightsub")
-                 p(class = "emaple") milesotne 2  
+                h2(class = "example") Bridge over Ou Te River
+                p(class= "exText") The most recent milestone we have raised money for is building a bridge over the Ou Te River. This allowed the locals to safley acess the water form the river without having to worry about the upridicatble riseing tide, that made the rive dangerouse to approch in certain conditons.
+            div(class = "rightsubTermite")
+                 
+                  h2(class = "example") Deliverd termite repellant for houses
+                  p(class= "exText") For our fist milestone we deliverd termite repelent to the locals of Pu Ngaol. This was important as many of the new houses built with the wood from the local forrest where suseptiple to termites causeing them to become stuructually weeker. But with your donations we were able to provide temit ereplent to help mitagte the problem.
 
 
             
 
         div(id = "rightSide")
-             form( action='charities/donationRequest', method= 'POST' id = "donation" class = "form2") 
+             form( action='charities/donationRequest', method= 'POST' id = "donation" class = "form2")  
                 fieldset 
+                    legend Donation Form
                     label(for="forename") First Name
                     input(type="text" name="forename" id="forename" required)
                     label(for="surname") Last Name
@@ -38,7 +41,7 @@ block content
                     label(for="mobile") Mobile Phone Number 
                     input(type="tel" name="mobile" id="mobile" required)
                     label(for="donation") Donation Ammount 
-                    select(name="donation" id="donation" required) 
+                    select(name="donation" id="donationAmount" required) 
                         option(value="£5")  £5
                         option(value="£10") £10
                         option(value="£25") £25
@@ -46,6 +49,7 @@ block content
                     button(id = "donate") Donate
              form( action='charities/donationRequest', method= 'POST' class = "payment" id = "payment") 
                 fieldset 
+                    legend Payment 
                     label(for="cardNum") Card number
                     input(type="number" name="cardNum" id="cardNum" required)
                     label(for="cardName") Name on card
@@ -54,6 +58,20 @@ block content
                     input(type="date" name="exdate" id="exdate" required)
                     label(for="code") security code 
                     input(type="number" name="code" id="code" required)  
-                    button(id = "pay") confirm
+                    button(id = "pay") Confirm
         script(src="/javascripts/request.js")
-
+    h1(class ="linkSec") Other ways to donate
+    section(class = "charSecondSec") 
+        
+        a(href="market") 
+            div(class= "link") 
+            
+             h1(class = "linkHead") Visit our online Marketplace
+             h4(class = "linkInfo") All procides go to the above charites 
+                
+          
+        a(href="tourism")  
+          
+            div(class= "link", href='tourism') 
+                h1(class = "linkHead") Book a wildlife tour 
+                h4(class = "linkInfo") More info on our torism page
