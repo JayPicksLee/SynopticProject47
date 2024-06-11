@@ -11,21 +11,19 @@ block content
                 input(type="search" id="searchbar" name="search" placeholder="type items name") 
                 input(type="submit")  
         div(class="introcontainer")
-            div(class="introtextdiv")
-                p Every bit of pennies counts!
-                p This market page will display items that are available in this village, all purchases will contribute to the effort of rebuilding this village
+            div(class="introtextdiv1")
+                p(id="boldtext") Every pennies counts!
+                p(id="infotext") This market page will display items that are available in this village, all purchases will contribute to the effort of rebuilding this village. Please have a look at the local goods and consider purchasing them when you arrived at the village.
             div(class="intropicturediv")
                 img(src="/images/people.jpg" id="intropic")
         div(class="item-container")
             each item in items
                 div(class="item-box")                 
-                    img(src="/images/firewood.jpg" class="marketimg")
+                    img(src="/images/mushroom.jpg" class="marketimg")
                     p= item.name
                     p= item.price
                     p= item.type
                     p= item.availability 
-
-
 
         
 

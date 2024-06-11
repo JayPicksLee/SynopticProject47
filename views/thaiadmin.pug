@@ -5,63 +5,63 @@ block content
 
  main
   
-   h1 Admin page
+   h1 หน้าแอดมิน
    section(class = "admin_main_content")
 
     div(class ="market")
       div(class = "admin_titles")
-        h2 Manage Market
-          button(onclick="showNewMarketItemDialog()", id = "newButton") Add new item
+        h2 จัดการตลาด
+          button(onclick="showNewMarketItemDialog()", id = "newButton") เพิ่มของใหม่
       dialog(id="newItemDialog")
        form(action='/admin/AddItem', method='POST')
-        label(for="newItemName") Name
+        label(for="newItemName") ชื่อ
         input(type="text", name ="newItemName")
 
-        label(for="newItemPrice") Price
+        label(for="newItemPrice") ราคา
         input(type="text", name ="newItemPrice")
 
-        label(for="newItemType") Type
+        label(for="newItemType") ชนิด
         input(type="text", name ="newItemType")
 
-        label(for="newItemAvailability") Availability
+        label(for="newItemAvailability") เหลือกี่ชิ้น
         input(type="text", name ="newItemAvailability")
-        button(type="submit") Add
+        button(type="submit") เพิ่ม
 
       div(class = "admin_items")
         ul 
         each item in items
           div(class = "tour")
           li 
-            p Name: #{item.name}
-            p price: #{item.price}
-            p type: #{item.type}
-            p availability: #{item.availability}
+            p ชื่อ: #{item.name}
+            p ราคา: #{item.price}
+            p ชนิด: #{item.type}
+            p เหลือกี่ชิ้น: #{item.availability}
             form(action='/admin/deleteItem', method='POST', class = "button")
               input(type="hidden", name ="id", value = item._id)
-              button(type = "submit", class = "delete_button") Delete Item
+              button(type = "submit", class = "delete_button") ลบของ
 
     div(class ="tours")
       div(class = "admin_titles")
-        h2 Manage Tours
+        h2 จัดการทัวร์
           button(onclick="showNewTourDialog()", id = "newButton") Add new tour
       dialog(id="newTourDialog")
        form(action='/admin/AddTour', method='POST')
-        label(for="newTourGuide") Tour guide
+        label(for="newTourGuide") ไกด์ทัวร์
         input(type="text", name ="newTourGuide")
 
-        label(for="newDestination") Destination
+        label(for="newDestination") จุดหมาย
         input(type="text", name ="newDestination")
 
-        label(for="newDescription") Description
+        label(for="newDescription") คำอธิบาย
         input(type="text", name ="newDescription")
 
-        label(for="newPrice") Price
+        label(for="newPrice") ราคา
         input(type="text", name ="newPrice")
 
-        label(for="newCapacity") Capacity
+        label(for="newCapacity") ความจุ
         input(type="text", name ="newCapacity")
 
-        button(type="submit") Add
+        button(type="submit") เพิ่ม
 
 
       div(class = "admin_items")
@@ -69,25 +69,25 @@ block content
           each tour in tours
             div(class = "tour")
             li
-              p Tour guide: #{tour.tourGuide}
-              p Destination: #{tour.destination}
-              p Description: #{tour.description}
-              p Price: #{tour.price}
-              p Capacity: #{tour.capacity}
+              p ไกด์ทัวร์: #{tour.tourGuide}
+              p จุดหมาย: #{tour.destination}
+              p คำอธิบาย: #{tour.description}
+              p ราคา: #{tour.price}
+              p ความจุ: #{tour.capacity}
               form(action='/admin/deleteTour', method='POST', class = "button")
               input(type="hidden", name ="id", value = tour._id)
-              button(type = "submit", class = "delete_button") Delete Tour
+              button(type = "submit", class = "delete_button") ลบทัวร์
 
     div(class ="users")
-      h2 Manage Users
+      h2 จัดการผู้ใช้งาน
 
       div(class = "admin_items")
         ul 
         each user in users 
           div(class = "user")
           li 
-            p Email: #{user.email}
+            p อีเมล: #{user.email}
             form(action="/admin/deleteUserAccount", method="POST")
               input(type="hidden", name="id", value=user._id)
-              button(type="submit", class = "delete_button") Delete Account
+              button(type="submit", class = "delete_button") ลบผู้ใช้
     script(src="/javascripts/adminCS.js")

@@ -6,9 +6,9 @@ block content
    section
     div(class = "wrapper")
      header
-       h1 Signup
+       h1 ลงสมัคร
      div(class ="underWrapper")
-       p(class="underWrapper-content") Enter your details to continue
+       p(class="underWrapper-content") ใส่ข้อมูล
 
      div(class = "signup")
       form(action='/signup/createNewUser', method= 'POST', class="signup-form")
@@ -36,5 +36,5 @@ block content
           input(type='submit' value='Sign Up', id="signup-button")
         if errorMessage
             p.error= errorMessage
-      p If you have an account already 
-       a(href='/login', class = "links") Log in
+      p ถ้ามีบัญชีอยู่แล้ว
+       a(href='/login', class = "links") ลงเข้า

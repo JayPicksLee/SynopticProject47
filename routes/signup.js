@@ -21,7 +21,19 @@ router.get('/', function(req, res, next) {
     //Tracking if the visitor has visited the website before, normally the session id resets upon every visit to the main page. Now we can watch the visitor and what they do.
     req.session.visited = true;
 
-  res.render('signup');
+    switch (req.session.language) {
+      case "en":
+        res.render('signup');
+        break;
+      case "th": 
+        res.render('thaiSignup');
+        break;
+      case "kh": 
+        res.render('khmerSignup');
+        break;
+      default:
+        break;
+    }
 });
 
 //POST METHOD createnewUser: Creates user with model function, with values in input fields.
@@ -37,7 +49,7 @@ router.post('/createNewUser', async (req, res, next) => {
     try {
         await usermodel.signUpUser(firstName, lastName, password, email, phoneNumber);
         console.log("Signup successful");
-
+        return res.redirect("/login");
     } catch (error)  { 
         res.render('signup', { errorMessage: error.message });
     }

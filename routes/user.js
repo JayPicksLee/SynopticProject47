@@ -28,8 +28,20 @@ router.get('/', async function(req, res, next) {
   const userInfo = await usermodel.getUserById(req.session.userID);
   console.log("USER IS" + userInfo);
 
-  res.render('user', {user: userInfo});
+  switch (req.session.language) {
+    case "en":
+      res.render('user', {user: userInfo});
+      break;
+    case "th": 
+      res.render('thaiUser', {user: userInfo});
+      break;
+    case "kh": 
+      res.render('khmerUser', {user: userInfo});
+      break;
+    default: 
+      break;
   }
+ }
 
 });
 

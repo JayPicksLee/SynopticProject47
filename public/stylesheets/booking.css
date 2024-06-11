@@ -2,20 +2,21 @@ body {
   line-height: 1.6;
   margin: 0;
   padding: 0;
+  background-color: rgb(79, 79, 79);
 }
 
 h1 {
   text-align: center;
   margin-top: 20px;
   font-size: 40px;
+  color: aliceblue;
 }
 
 .intro-section {
   display: flex;
   justify-content: center;
   padding: 20px;
-  background-color: #f4f4f4;
-  border-bottom: 1px solid #ccc;
+  background-color: rgb(120, 120, 120);
 }
 
 .intro-info {
@@ -25,10 +26,11 @@ h1 {
 
 .intro-info h2 {
   text-align: center;
+  color: aliceblue;
 }
 
 .intro-info p {
-  background: #fff;
+  background: rgb(215, 215, 215);
   padding: 15px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -38,7 +40,7 @@ h1 {
 
 .tour-list-section {
   padding: 20px;
-  background-color: #fff;
+  background-color: rgb(79, 79, 79);
 }
 
 .tour-list {
@@ -49,7 +51,7 @@ h1 {
 
 .tour-item {
   padding: 15px;
-  background: #f4f4f4;
+  background: rgb(215, 215, 215);
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   text-align: left;
@@ -73,8 +75,7 @@ label {
 
 .date-selection {
   padding: 20px;
-  background-color: #fff;
-  border-top: 1px solid #ccc;
+  background-color: rgb(120, 120, 120);
   text-align: center;
 }
 
@@ -83,6 +84,7 @@ form {
   flex-direction: column;
   align-items: center;
   gap: 20px;
+  color: aliceblue
 }
 
 input[type="date"] {

@@ -1,6 +1,9 @@
+body{
+  background-color: rgb(79, 79, 79);
+}
 
 .pageTitle{
-    text-decoration: underline;
+    font-size: 45px;
     padding-top: 24px;
     padding-bottom: auto;
     padding-right: 3px;
@@ -10,10 +13,12 @@
     margin-bottom: 20px;
     margin-left: 10px;
     text-align: center;
+    color:#ffffff;
 }
 
 
 .charSec{
+    float: inline-start;
     padding-top: 24px;
     padding-bottom: auto;
     padding-right: 3px;
@@ -22,6 +27,8 @@
     margin-right: auto;
     margin-bottom: 20px;
     margin-left: 5px;
+    background-color: rgb(111, 110, 110);
+    border-radius: 5px;
   }
   
   #leftSide{
@@ -34,7 +41,9 @@
     margin-right: auto;
     margin-bottom: 20px;
     margin-left: 0.25%;
-    background-color: rgb(168, 168, 168);
+    border-style:solid;
+    border-width: 2px;
+    border-color: #000000;
     border-radius: 7px;
     width: 66%;
   }
@@ -47,8 +56,10 @@
     margin-right: 2%;
     margin-bottom: 20px;
     margin-left: 5px;
-    background-color: #ddeff7;
+    color: #ffff;
+    background-color: rgb(120, 120, 120);
     border-radius: 7px;
+    font-size: 18px;
   }
 
   .payment{
@@ -62,19 +73,58 @@
   display: none;
 }
   
-  .rightsub{
-    padding-top: 2px;
-    padding-bottom: 24px;
-    padding-right: 0.5%;
-    padding-left: 0.5%;
+  .rightsubBridge{
+    height: 200px;
+    position: relative;
     margin-top: auto;
     margin-right: auto;
     margin-bottom: 20px;
     margin-left: 0.25%;
     display: inline-block;
     width: 47%;
-    background-color: #63a2ad;
-    border-radius: 15px;
+    background-image: url('/images/bridge.jpg');;
+    border-radius: 5px;
+  }
+
+  .rightsubTermite{
+    height: 200px;
+    position:relative;
+    margin-top: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    margin-left: 0.25%;
+    display: inline-block;
+    width: 47%;
+    background-image: url('/images/termite.jpg');;
+    border-radius: 5px;
+  }
+
+  .example{
+   
+    bottom: 0;
+    text-align: center;
+    padding: 10px 0;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    margin: 0;
+    padding: 10px 0;
+    font-size: 18px;
+    border-radius: 5px;
+  }
+
+  .exText{
+    position: absolute;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    margin: 0;
+    padding: 10px 0;
+    font-size: 18px;
+    border-radius: 5px;
   }
   .container { 
     background-color: rgb(192, 192, 192); 
@@ -94,10 +144,12 @@
 
 .leftHeader{
     text-decoration: underline;
+    text-align: center;
 }
 
 .currentMile{
     text-align: center;
+    
 }
   
   #rightSide{
@@ -111,20 +163,42 @@
     margin-left: 0.1%;
     display: inline-block;
     width: 30%;
-    background-color: #60835f;
+    border-style:solid;
+    border-width: 2px;
+    border-color:#000000;
     border-radius: 7px;
+    background-color: rgb(78, 144, 202);
   }
   
   @media only screen and (max-width: 1000px) {
   #rightSide{
+    float: none;
+    display: block;
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
     width: 90%;
   }
   
   #leftSide{
+   
+    float: none;
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
     width: 90%;
   }
-  .rightsub{
+  .rightsubBridge{
     width: 90%;
+    display: block;
+  }
+  .rightsubTermite{
+    width: 90%;
+    display: block;
+  }
+  
+  label {
+    text-align: center;
   }
   }
   
@@ -134,6 +208,7 @@
     font-size: large;
     align-self: center;
     border-radius: 50px;
+  
   }
   
   label {
@@ -175,22 +250,28 @@
   #donate {
     margin-top: 2%;
     margin-bottom: 2%;
-    margin-left: 5px;
-    margin-right: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
     min-width: 150px;
     padding: 5px;
     border: 1px solid #060331;
     border-radius: 5px;
     background-color: #179b49;
     color: #ffffff;
+  }
+
+  #donate:hover{
+    background-color:   #137238;;
   }
 
   #pay{
     margin-top: 2%;
     margin-bottom: 2%;
-    margin-left: 5px;
-    margin-right: 25px;
+    margin-left: auto;
+    margin-right: auto;
     min-width: 150px;
+    display: block;
     padding: 5px;
     border: 1px solid #060331;
     border-radius: 5px;
@@ -198,3 +279,69 @@
     color: #ffffff;
   }
 
+  #pay:hover{
+    background-color:   #137238;;
+  }
+  #donation{
+    background-color: rgb(78, 144, 202);
+  }
+
+  #payment{
+    background-color: rgb(78, 144, 202);
+  }
+
+  .charSecondSec{
+    padding-top: 24px;
+    padding-bottom: auto;
+    padding-right: 3px;
+    padding-left: 11px;
+    margin-top: 40px;
+    margin: auto;
+   border-radius: 5px;
+   text-align: center;
+   
+  }
+
+  .link{
+    position: relative;
+    padding-top: auto;
+    padding-bottom: auto;
+    padding-right: 3px;
+    padding-left: 11px;
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    vertical-align: middle;
+    text-align: center;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #9a98aa;
+    width: 50%;
+  }
+
+  .linkHead{
+    text-decoration: underline;
+    font-size: 26px;
+    color: #ede5e5;
+  }
+
+  .linkInfo{
+    font-size: 20px;
+    color: #dcdada;
+    text-decoration: underline;
+  
+  }
+
+  .link:hover{
+    background-color: rgb(7, 46, 79);
+    transform: scale(1.02);
+    transition: transform 0.3s;
+  }
+
+  .linkSec{
+    text-align: center;
+    text-decoration: underline;
+    font-size: 35px;
+    color: #ede5e5;
+  }
+  

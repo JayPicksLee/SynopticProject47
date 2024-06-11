@@ -6,9 +6,9 @@ block content
    section
     div(class = "wrapper")
      header
-       h1 Signup
+       h1 ចុះ​ឈ្មោះ
      div(class ="underWrapper")
-       p(class="underWrapper-content") Enter your details to continue
+       p(class="underWrapper-content") បញ្ចូលព័ត៌មានលម្អិតរបស់អ្នកដើម្បីបន្ត
 
      div(class = "signup")
       form(action='/signup/createNewUser', method= 'POST', class="signup-form")
@@ -36,5 +36,5 @@ block content
           input(type='submit' value='Sign Up', id="signup-button")
         if errorMessage
             p.error= errorMessage
-      p If you have an account already 
-       a(href='/login', class = "links") Log in
+      p ប្រសិនបើអ្នកមានគណនីរួចហើយ
+       a(href='/login', class = "links") ចូល

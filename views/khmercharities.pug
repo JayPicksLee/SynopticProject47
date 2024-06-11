@@ -1,0 +1,59 @@
+extends layout 
+
+block content
+    head
+    link(rel='stylesheet', href='/stylesheets/charities.css')
+    h1(class="pageTitle") หน้าบริจาค
+    section(class = "charSec") 
+        div(id = "leftSide")
+            h1(class ="leftHeader") ហេតុអ្វីបានជាវាសំខាន់
+            p(id ="desc") សប្បុរសធម៌ជួយ Rhonus ផ្ទាល់ខ្លួនរបស់ខ្ញុំ ដែលតែងតែជាគន្លឹះសម្រាប់ឡានដឹកទំនិញ។ ខ្ញុំ​បាន​និយាយ​ថា​តើ​មាន​ការ​ភ័យ​ខ្លាច​ប៉ុណ្ណា ហើយ​ពេល​ខ្លះ​គ្មាន​សង្ឃឹម​ទាល់​តែ​សោះ។ ប៉ុន្តែតើអ្នកណាជា nisl pretium, hendrerit ស្អប់ eu, mendura ស្អប់គាត់។ ចង្ក្រានគួរតែរួចរាល់មុនពេលកំណត់។ យោងតាមគោលដៅនៃការព្យាបាលរបស់ខ្ញុំ ពេលវេលាគ្រាន់តែជាតម្លៃ a. តាមការពិតវាងាយស្រួលក្នុងការបាញ់បាល់ជាមួយ pulvinar ។ គាត់នៅផ្ទះហើយទំនេរ។ ដើម្បីផ្តល់ហិរញ្ញប្បទានដល់ទីផ្សារដ៏ធំ។ រហូតដល់បាល់បោះមានភាពងាយស្រួល។ ទាល់​តែ​ពុល​គ្រែ​និង​ខ្លួន​អ្នក​ជំងឺ រាង​កាយ​ស្អាត ប្រូតេអ៊ីន​សុទ្ធ​ហើយ​មួយ​រយៈ​ទើប​រួច​ជីវិត។ មិនមានម៉ាស គ្មានមានផ្ទៃពោះ និងគ្មានមនុស្សទេ ប៉ុន្តែលទ្ធផលគឺប្រកបដោយប្រាជ្ញា។ Mauris semper tortor eu tortor sagittis, eu semper odium accumsan ។ កងនាវាត្រូវការ turpis aculis fringilla ។ វាជារឿងសំខាន់ក្នុងការមានថ្ងៃចុងសប្តាហ៍ដ៏អស្ចារ្យ។ ប៉ុន្តែ arcu facilisis pellentesque ។ វាដល់ពេលហើយសម្រាប់អ្នកអភិវឌ្ឍន៍ដើម្បីធ្វើតាម។
+          
+            h1(class ="leftHeader") គោលដៅបន្ទាប់
+
+            h3(class= "currentMile") ផ្លូវថ្មីទៅមន្ទីរពេទ្
+
+            div(class = "container") 
+                div(class = "raised")   70%
+            h1(class="leftHeader") ព្រឹត្តិការណ៍សំខាន់ៗដែលបានបញ្ចប់   
+            div(class = "rightsub")
+           
+                p(class = "emaple") ចំណុចសំខាន់ 1
+
+            div(class = "rightsub")
+                 p(class = "emaple") ចំណុចសំខាន់ 2  
+
+
+            
+
+        div(id = "rightSide")
+             form( action='charities/donationRequest', method= 'POST' id = "donation" class = "form2") 
+                fieldset 
+                    label(for="forename") ឈ្មោះដំបូង
+                    input(type="text" name="forename" id="forename" required)
+                    label(for="surname") នាមត្រកូល
+                    input(type="text" name="surname" id="surname" required)
+                    label(for="email") អ៊ីមែល
+                    input(type="email" name="email" id="email" required)
+                    label(for="mobile") លេខទូរស័ព្
+                    input(type="tel" name="mobile" id="mobile" required)
+                    label(for="donation") ចំនួនទឹកប្រាក់បរិច្ចាគ 
+                    select(name="donation" id="donation" required) 
+                        option(value="£5")  £5
+                        option(value="£10") £10
+                        option(value="£25") £25
+                        option(value="£50") £50    
+                    button(id = "donate") បរិច្ចាគ
+             form( action='charities/donationRequest', method= 'POST' class = "payment" id = "payment") 
+                fieldset 
+                    label(for="cardNum") លេខ​កាត
+                    input(type="number" name="cardNum" id="cardNum" required)
+                    label(for="cardName") ឈ្មោះ​នៅ​លើ​កាត
+                    input(type="text" name="cardName" id="cardName" required)
+                    label(for="exdate") កាលបរិច្ឆេទ​ផុតកំណត់
+                    input(type="date" name="exdate" id="exdate" required)
+                    label(for="code") លេខកាតចុងក្រោយ
+                    input(type="number" name="code" id="code" required)  
+                    button(id = "pay") បញ្ជាក់
+        script(src="/javascripts/request.js")
+

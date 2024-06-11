@@ -2,6 +2,7 @@ body {
   margin:0;
   background-color: white;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin-bottom: 50px;
 }
 
 a {
@@ -67,10 +68,116 @@ a {
   display: inline-flex;
   align-items: right;
 }
+
 .footer {
   background-color: #3f3f3f;
   width: 100%;
   color: rgb(189, 189, 189);
   text-align: center;
-  padding: 10px 0;
+  position: fixed;
+  bottom: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
+
+#logout_button {
+  position: fixed;
+  bottom: 60px;
+  right: 20px;
+  font-size: 20px; 
+  width: 5%;
+  height: 5%;
+  
+}
+
+#logout_input{
+  width: 93%;
+  padding: 10px;
+  background-color: #2b2b2b;
+  color: #fff;
+  cursor: pointer;
+  margin-left: 4%;
+  border-radius: 10px;
+}
+
+#logout_input:hover {
+  background-color: #636363;
+}
+
+.languagePicker {
+  position: fixed;
+  display: inline-block;
+  left:14px;
+  bottom:0;
+  padding-top: 10px;
+  padding-bottom: 14px;
+}
+
+.selectedLangauage {
+  position: relative;
+}
+
+.language-content{
+  display: none;
+  background-color: hsl(0,0%,95%);
+  position: absolute;
+  min-width: 100px;
+  box-shadow: 2px 2px 5px black;
+}
+
+.selectedLangauage:hover .language-content{
+  display: block;
+}
+
+.selectedLanguageButton{
+  background-color: #2b2b2b;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+}
+
+.selectedLanguageButton:hover {
+  background-color: white;
+  color:black;
+}
+
+.language-content {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  min-width: 100px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 5px;
+  top: auto;
+  bottom: 100%;
+}
+
+.language-content a {
+  color: #3f3f3f;
+  padding: 10px 15px;
+  text-decoration: none;
+  display: block;
+  font-size: 14px;
+}
+
+.language-content a:hover {
+  background-color: #f1f1f1;
+  border-radius: 5px;
+}
+
+.selectedLangauage:hover .language-content {
+  display: block;
+}
+
+button, input[type="submit"] {
+  width:fit-content;
+  padding: 10px;
+  border-radius: 5px;
+  border:none;
+  background-color: #4b4b4b;
+  color: #fff;
+  cursor: pointer;
+  margin-left: 4%;
+ }

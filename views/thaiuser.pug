@@ -1,0 +1,58 @@
+extends layout
+
+block content
+
+ link(rel='stylesheet', href = '/stylesheets/user.css')
+ main
+  h1 โปรไฟล์
+  section(class="section")
+   div(class="wrapper")
+    header
+     h2 ข้อมูลส่วนตัว
+     p อัปเดตข้อมูล
+    div(class="box")
+     div(class="content")
+      form(class="accountDetails")
+       div(class="row")
+        label(for="firstName") ชื่อแรก:
+        input(type="text",name= "firstName",value=user.firstName, class="inputField")
+       div(class="row")
+        label(for="lastName") นามสกุล:
+        input(type="text", name = "lastName",value=user.lastName, class="inputField")
+       input(type="submit", name="updateDetails", value="Save", id="updateDetails_input")
+   div(class="wrapper")   
+    header
+     h2 ข้อมูลติดต่อ
+     p เราจะติดต่อยังไง.
+    div(class="box")
+     div(class="content")
+      form(class="accountDetails")
+       div(class="row")
+        label(for="email") อีเมล:
+        input(type="text",name= "email",value=user.email, class="inputField")
+       div(class="row")
+        label(for="phoneNumber") เบอร์โทร:
+        input(type="text", name = "phoneNumber",value=user.phoneNumber, class="inputField")
+   div(class="wrapper")
+    header
+     h2 ข่าวสาร
+    div(class="box")
+     div(class="content")
+      form()
+
+   div(class="wrapper")
+    header
+     h2 จองทัสร์แล้ว
+    div(class="box")
+     div(class="content")
+
+
+   div(class="wrapper")
+    header 
+     h2 ลบบัญชี 
+     p ลบบัญชีของคุณอย่างถาวร สิ่งนี้ไม่สามารถยกเลิกได้ ข้อมูลทั้งหมดจะถูกลบ
+
+    div(class="box")
+     div(class="content")    
+      form(action='/user/deleteAccount', method='POST', id="delete_button")
+       input(type="submit", name="deleteAccount", value="Delete Account", id="deleteAccount_input")

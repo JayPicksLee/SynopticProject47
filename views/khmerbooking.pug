@@ -1,0 +1,38 @@
+extends layout
+
+block content
+  link(rel='stylesheet', href='/stylesheets/booking.css')
+  h1 កក់ដំណើរកម្សាន្ត
+
+  .intro-section
+    .intro-info
+      h2 ស្វែងយល់ពី Pu Ngaol ជាមួយនឹងដំណើរទេសចរណ៍ដែលបានណែនាំរបស់យើង។
+      p ស្វែងយល់ពីភាពស្រស់ស្អាត និងវប្បធម៌របស់ Pu Ngaol ជាមួយនឹងមគ្គុទ្ទេសក៍ក្នុងស្រុករបស់យើង។ ជ្រើសរើសដំណើរកម្សាន្ត ជ្រើសរើសកាលបរិច្ឆេទ និងត្រៀមខ្លួនសម្រាប់បទពិសោធន៍ដែលមិនអាចបំភ្លេចបាន។
+  .tour-list-section
+    .tour-list
+      .tour-item
+        h2 គោលដៅ 1 - £30
+        p ម​គ្គុ​ទេស​ក៍​ទេសចរណ៍: មគ្គុទ្ទេសក៍ 1
+        p ការពិពណ៌នាអំពីដំណើរកម្សាន្ត
+        label
+          input(type='radio', name='tourId', value='tour1')
+          | ជ្រើសរើសដំណើរកម្សាន្តនេះ។
+      .tour-item
+        h2 គោលដៅ 2 - £50
+        p ម​គ្គុ​ទេស​ក៍​ទេសចរណ៍: មគ្គុទ្ទេសក៍ 2
+        p ការពិពណ៌នាអំពីដំណើរកម្សាន្ត
+        label
+          input(type='radio', name='tourId', value='tour2')
+          | ជ្រើសរើសដំណើរកម្សាន្តនេះ។
+
+  .date-selection
+    form
+      label(for='date') ជ្រើសរើសកាលបរិច្ឆេទ:
+      input(type='date', id='date', name='date', required)
+      button(type='submit') បញ្ជាក់ការកក់
+
+  .info-section
+    #confirmationMessage(style='display:none')
+      h2 ការកក់ត្រូវបានបញ្ជាក់!
+      p សូមអរគុណសម្រាប់ការកក់ដំណើរកម្សាន្តជាមួយយើងខ្ញុំ.
+

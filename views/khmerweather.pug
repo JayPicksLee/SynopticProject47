@@ -16,19 +16,19 @@ block content
 
                 br
                 if data.floodRisk > 0.75
-                    p high flood risk!
+                    p ហានិភ័យទឹកជំនន់ខ្ពស់។!
                 else if data.floodRisk > 0.5
-                    p slight flood risk 
+                    p ហានិភ័យទឹកជំនន់តិចតួច
                 else if data.floodRisk > 0.25
-                    p low flood risk
+                    p ហានិភ័យទឹកជំនន់ទាប
                 else 
-                    p no flood risk
+                    p គ្មានហានិភ័យទឹកជំនន់
                 if data.droughtRisk > 0.75
-                    p high drought risk!
+                    p ហានិភ័យគ្រោះរាំងស្ងួតខ្ពស់។!
                 else if data.droughtRisk > 0.5
-                    p slight drought risk 
+                    p ហានិភ័យគ្រោះរាំងស្ងួតតិចតួច 
                 else if data.droughRisk > 0.25
-                    p low drought risk
+                    p ហានិភ័យគ្រោះរាំងស្ងួតទាប
                 else 
-                    p no drought risk
+                    p គ្មានហានិភ័យគ្រោះរាំងស្ងួត
                 p #{data.date}
