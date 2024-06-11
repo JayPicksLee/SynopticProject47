@@ -1,0 +1,77 @@
+extends layout 
+
+block content
+    head
+    link(rel='stylesheet', href='/stylesheets/charities.css')
+    h1(class="pageTitle") บริจาคเงิน
+    section(class = "charSec") 
+        div(id = "leftSide")
+            h1(class ="leftHeader") ทำไมถึงสำคัญ
+            p(id ="desc") รายได้ทั้งหมดจากการทัวร์หรือตลาดนำไปช่วยเหลือชาวปู่เงา หากคุณต้องการบริจาค ให้ใช้แบบฟอร์มด้านขวาเพื่อบริจาคเงินจำนวนเล็กน้อยโดยตรง การบริจาคของคุณจะนำไปช่วยเหลือกองทุน WWF กัมพูชา และการพัฒนาและความร่วมมือในการดำเนินการการกุศลที่ช่วยเหลือใน Pu Ngaol รายได้จะนำไปโครงการเฉพาะเพื่อช่วยเหลือชาวบ้าน สามารถดูความคืบหน้าในการบรรลุเป้าหมายเหล่านี้ได้ที่ด้านล่าง รวมถึงเป้าหมายก่อนหน้านี้ที่เราได้ทำสำเร็จแล้ว เราขอขอบคุณการบริจาคที่คุณสามารถให้ได้
+          
+            h1(class ="leftHeader") เป้าหมายต่อไป
+
+            h3(class= "currentMile") ถนนเชื่อมถึงโรงบาล
+
+            div(class = "container") 
+                div(class = "raised")   70%
+            h1(class="leftHeader") เป้าหมายที่เสร็จสิ้น  
+            div(class = "rightsubBridge")
+           
+                h2(class = "example") สะพานเชื่อมไปที่แม่น้ำ Ou Te
+                p(class= "exText") เหตุการณ์สำคัญล่าสุดที่เราระดมเงินได้คือการสร้างสะพานข้ามแม่น้ำ Ou Te วิธีนี้ช่วยให้ชาวบ้านเข้าถึงน้ำจากแม่น้ำได้อย่างปลอดภัยโดยไม่ต้องกังวลกับกระแสน้ำที่เพิ่มขึ้น ซึ่งทำให้แม่น้ำเป็นอันตรายเมื่อเข้าใกล้ในบางสภาวะ
+            div(class = "rightsubTermite")
+                 
+                  h2(class = "example") ส่งมอบเครื่องไล่ปลวกสำหรับบ้านเรือน
+                  p(class= "exText") สำหรับความสำเร็จครั้งแรกของเรา เราได้ส่งมอบผลิตภัณฑ์ไล่ปลวกให้กับชาวบ้านปู่เงา สิ่งนี้มีความสำคัญพอ ๆ กับบ้านใหม่หลายหลังที่สร้างด้วยไม้จากป่าในท้องถิ่นซึ่งมีปลวกกัดเซาะทำให้โครงสร้างพังทลายลง แต่ด้วยการบริจาคของคุณ เราสามารถจัดหา temit ereplent เพื่อช่วยบรรเทาปัญหาได้
+
+
+            
+
+        div(id = "rightSide")
+             form( action='charities/donationRequest', method= 'POST' id = "donation" class = "form2")  
+                fieldset 
+                    legend แบบฟอร์มการบริจาค
+                    label(for="forename") ชื่อแรก
+                    input(type="text" name="forename" id="forename" required)
+                    label(for="surname") นามสกุล
+                    input(type="text" name="surname" id="surname" required)
+                    label(for="email") อีเมล
+                    input(type="email" name="email" id="email" required)
+                    label(for="mobile") เบอร์โทรศัพท์ 
+                    input(type="tel" name="mobile" id="mobile" required)
+                    label(for="donation") จำนวนเงินบริจาค
+                    select(name="donation" id="donationAmount" required) 
+                        option(value="£5")  £5
+                        option(value="£10") £10
+                        option(value="£25") £25
+                        option(value="£50") £50    
+                    button(id = "donate") บริจาค
+             form( action='charities/donationRequest', method= 'POST' class = "payment" id = "payment") 
+                fieldset 
+                    legend Payment 
+                    label(for="cardNum") เบอร์บัตร
+                    input(type="number" name="cardNum" id="cardNum" required)
+                    label(for="cardName") ชื่อในบัตร
+                    input(type="text" name="cardName" id="cardName" required)
+                    label(for="exdate") วันหมดอายุ
+                    input(type="date" name="exdate" id="exdate" required)
+                    label(for="code") เลขท้ายบัตร
+                    input(type="number" name="code" id="code" required)  
+                    button(id = "pay") ยืนยัน
+        script(src="/javascripts/request.js")
+    h1(class ="linkSec") วิธีบริจาคแบบอื่น
+    section(class = "charSecondSec") 
+        
+        a(href="market") 
+            div(class= "link") 
+            
+             h1(class = "linkHead") เยี่ยมชมตลาดออนไลน์
+             h4(class = "linkInfo") เงินทั้งจะเข้าไปในการกุสล
+                
+          
+        a(href="tourism")  
+          
+            div(class= "link", href='tourism') 
+                h1(class = "linkHead") บุ๊คทัวร์เยี่ยมชมสัตว์ป่า
+                h4(class = "linkInfo") ข้อมูลเพิ่มเติมในหน้าการท้องเที่ยว
