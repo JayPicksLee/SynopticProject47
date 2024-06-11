@@ -74,3 +74,17 @@ button:hover, input[type="submit"]:hover {
   display:inline-block;
   width: 100%;
 }
+
+dialog {
+  border: none;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: rgb(79, 79, 79);
+  width: 200px;
+  color: white;
+}
+
+dialog input{
+  margin-bottom: 10px;
+}
