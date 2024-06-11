@@ -143,7 +143,7 @@ a {
   color:black;
 }
 
-.content {
+.language-content {
   display: none;
   position: absolute;
   background-color: #fff;
@@ -155,7 +155,7 @@ a {
   bottom: 100%;
 }
 
-.content a {
+.language-content a {
   color: #3f3f3f;
   padding: 10px 15px;
   text-decoration: none;
@@ -163,11 +163,11 @@ a {
   font-size: 14px;
 }
 
-.content a:hover {
+.language-content a:hover {
   background-color: #f1f1f1;
   border-radius: 5px;
 }
 
-.selectedLangauage:hover .content {
+.selectedLangauage:hover .language-content {
   display: block;
 }
