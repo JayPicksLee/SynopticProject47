@@ -6,22 +6,22 @@ block content
     h1(class="pageTitle") หน้าบริจาค
     section(class = "charSec") 
         div(id = "leftSide")
-            h1(class ="leftHeader") ทำไมถึงสำคัญ
+            h1(class ="leftHeader") ហេតុអ្វីបានជាវាសំខាន់
             p(id ="desc") charity help Phasellus rhoncus ipsum mi, id semper felis aliquet sit amet. Curabitur quam metus, faucibus at consequat eu, interdum eu nulla. Sed quis nisl pretium, hendrerit odio eu, malesuada odio. Ut rhoncus urna sit amet ante tempor semper. Proin finibus mi orci, in tempus justo pretium a. Nam sagittis justo eu ligula pulvinar commodo. Duis ac libero erat. Ut imperdiet nibh massa. Donec ultrices facilisis dapibus. Donec venenatis, lectus ac sollicitudin ullamcorper, lorem turpis dapibus purus, et aliquam enim justo vitae libero. Curabitur nulla massa, gravida nec elit quis, consequat convallis sapien. Mauris semper tortor eu tortor sagittis, eu semper odio accumsan. Phasellus pellentesque eget turpis iaculis fringilla. Suspendisse porta augue diam, sit amet volutpat magna maximus sed. Phasellus laoreet sed arcu facilisis pellentesque. Aliquam tempus sem eu nunc consectetur tincidunt.
           
-            h1(class ="leftHeader") เป้าหมายต่อไป
+            h1(class ="leftHeader") គោលដៅបន្ទាប់
 
-            h3(class= "currentMile") New road to hospital
+            h3(class= "currentMile") ផ្លូវថ្មីទៅមន្ទីរពេទ្
 
             div(class = "container") 
                 div(class = "raised")   70%
-            h1(class="leftHeader") completed milestones   
+            h1(class="leftHeader") ព្រឹត្តិការណ៍សំខាន់ៗដែលបានបញ្ចប់   
             div(class = "rightsub")
            
-                p(class = "emaple") milestone 1
+                p(class = "emaple") ចំណុចសំខាន់ 1
 
             div(class = "rightsub")
-                 p(class = "emaple") milesotne 2  
+                 p(class = "emaple") ចំណុចសំខាន់ 2  
 
 
             
@@ -29,31 +29,31 @@ block content
         div(id = "rightSide")
              form( action='charities/donationRequest', method= 'POST' id = "donation" class = "form2") 
                 fieldset 
-                    label(for="forename") ชื่อแรก
+                    label(for="forename") ឈ្មោះដំបូង
                     input(type="text" name="forename" id="forename" required)
-                    label(for="surname") นามสกุล
+                    label(for="surname") នាមត្រកូល
                     input(type="text" name="surname" id="surname" required)
-                    label(for="email") อีเมล
+                    label(for="email") អ៊ីមែល
                     input(type="email" name="email" id="email" required)
-                    label(for="mobile") เบอร์โทรศัพท์ 
+                    label(for="mobile") លេខទូរស័ព្
                     input(type="tel" name="mobile" id="mobile" required)
-                    label(for="donation") จำนวนเงินบริจาค 
+                    label(for="donation") ចំនួនទឹកប្រាក់បរិច្ចាគ 
                     select(name="donation" id="donation" required) 
                         option(value="£5")  £5
                         option(value="£10") £10
                         option(value="£25") £25
                         option(value="£50") £50    
-                    button(id = "donate") บริจาค
+                    button(id = "donate") បរិច្ចាគ
              form( action='charities/donationRequest', method= 'POST' class = "payment" id = "payment") 
                 fieldset 
-                    label(for="cardNum") หมายเลขบัตร
+                    label(for="cardNum") លេខ​កាត
                     input(type="number" name="cardNum" id="cardNum" required)
-                    label(for="cardName") ชื่อในบัตร
+                    label(for="cardName") ឈ្មោះ​នៅ​លើ​កាត
                     input(type="text" name="cardName" id="cardName" required)
-                    label(for="exdate") วันหมดอายุ
+                    label(for="exdate") កាលបរិច្ឆេទ​ផុតកំណត់
                     input(type="date" name="exdate" id="exdate" required)
-                    label(for="code") เลขท้ายบัตร
+                    label(for="code") លេខកាតចុងក្រោយ
                     input(type="number" name="code" id="code" required)  
-                    button(id = "pay") ยืนยัน
+                    button(id = "pay") បញ្ជាក់
         script(src="/javascripts/request.js")
 

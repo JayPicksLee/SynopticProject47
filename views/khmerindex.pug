@@ -1,0 +1,73 @@
+extends layout
+
+block content
+  head
+  link(rel='stylesheet', href='/stylesheets/index.css')
+  h1
+    | Pu Ngaol, Here and Now
+    br
+    | 
+    br
+    | 
+    br
+    | 
+    br
+    | 
+    br
+    | ⮮ Step Into Our World ⮯
+  div(id="buttonContainer")  
+    button(class="homeButtons" id="marketButton")
+      a(href="market" class="homeButtons") ទីផ្សារ
+      br
+      | 🍎
+    button(class="homeButtons" id="toursButton" href="tourism")
+      a(href="tourism" class="homeButtons") ដំណើរកំសាន្
+      br
+      | 🏞️
+    button(class="homeButtons" id="weatherButton" href="weather")
+      a(href="weather" class="homeButtons") អាកាសធាតុ
+      br
+      | ☀️
+    button(class="homeButtons" id="howToButton")
+      a(href="instructions" class="homeButtons") របៀបប្រើ
+      br
+      | ❓
+    a(id="marketOverlayText" href="market")
+      |○ អ្វីគ្រប់យ៉ាងធម្មជាតិ
+      br
+      |○ គាំទ្រប្រជាជនក្នុងតំបន់
+      br
+      |○ ប្រមូលផលបានគ្រប់គ្រាន់
+      br
+      |○ តម្លៃផ្ទាល់
+      br
+      |○ ធ្វើវាដោយបេះដូងរបស់អ្នក។
+      br
+      |○ ចុចដើម្បីមើល!
+    a(id="toursOverlayText" href="tourism")
+      |○ ព័ត៌មានតំបន់
+      br
+      |○ ចំណុចចាប់អារម្មណ៍
+      br
+      |○ ដំណើរទេសចរណ៍អាជីព
+      br
+      |○ តម្លៃផ្ទាល់
+      br
+      |○ គាំទ្រប្រជាជនក្នុងតំបន់
+      br
+      |○ ចុចដើម្បីមើល!
+    a(id="weatherOverlayText" href="weather")
+      |○ ពិនិត្យមើលទឹកជំនន់
+      br
+      |○ ពិនិត្យមើលគ្រោះរាំងស្ងួត
+      br
+      |○ រៀបចំខ្លួន​របស់​អ្នក
+      br
+      |○ ចុចដើម្បីមើល!
+    a(id="howToOverlayText" href="instructions")
+      |○ របៀបប្រើគេហទំព័រ
+      br
+      |○ សួរ​សំណួរ​មួយ
+      br
+      |○ ចុចដើម្បីមើល!
+      
