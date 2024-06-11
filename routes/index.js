@@ -74,8 +74,21 @@ router.post(
   '/logout',
   (req,res)=>
   {
+
+    switch (req.session.language) {
+      case "en":
+        res.redirect('/');
+        break;
+      case "th": 
+        res.redirect('/th');
+        break;
+      case "kh":
+        res.redirect('/kh');
+        break;
+      default:
+        break;
+    }
     req.session.destroy();
-    res.redirect('/');  
 
   }
 )
