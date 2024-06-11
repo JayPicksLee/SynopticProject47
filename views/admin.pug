@@ -38,7 +38,7 @@ block content
             p availability: #{item.availability}
             form(action='/admin/deleteItem', method='POST', class = "button")
               input(type="hidden", name ="id", value = item._id)
-              button(type = "submit") Delete Item
+              button(type = "submit", class = "delete_button") Delete Item
 
     div(class ="tours")
       div(class = "admin_titles")
@@ -76,7 +76,7 @@ block content
               p Capacity: #{tour.capacity}
               form(action='/admin/deleteTour', method='POST', class = "button")
               input(type="hidden", name ="id", value = tour._id)
-              button(type = "submit") Delete Tour
+              button(type = "submit", class = "delete_button") Delete Tour
 
     div(class ="users")
       h2 Manage Users
@@ -89,5 +89,5 @@ block content
             p Email: #{user.email}
             form(action="/admin/deleteUserAccount", method="POST")
               input(type="hidden", name="id", value=user._id)
-              button(type="submit") Delete Account
+              button(type="submit", class = "delete_button") Delete Account
     script(src="/javascripts/adminCS.js")
