@@ -1,3 +1,6 @@
+body{
+  background-color: rgb(79, 79, 79);
+}
 
 .pageTitle{
     font-size: 45px;
@@ -10,6 +13,7 @@
     margin-bottom: 20px;
     margin-left: 10px;
     text-align: center;
+    color:#ffffff;
 }
 
 
@@ -23,7 +27,7 @@
     margin-right: auto;
     margin-bottom: 20px;
     margin-left: 5px;
-    background-color: #f4f4f4;
+    background-color: rgb(111, 110, 110);
     border-radius: 5px;
   }
   
@@ -39,7 +43,7 @@
     margin-left: 0.25%;
     border-style:solid;
     border-width: 2px;
-    border-color: #025892;
+    border-color: #000000;
     border-radius: 7px;
     width: 66%;
   }
@@ -161,9 +165,9 @@
     width: 30%;
     border-style:solid;
     border-width: 2px;
-    border-color: #025892;
+    border-color:#000000;
     border-radius: 7px;
-    background-color: rgb(212, 231, 248);
+    background-color: rgb(78, 144, 202);
   }
   
   @media only screen and (max-width: 1000px) {
@@ -204,6 +208,7 @@
     font-size: large;
     align-self: center;
     border-radius: 50px;
+  
   }
   
   label {
@@ -278,11 +283,11 @@
     background-color:   #137238;;
   }
   #donation{
-    background-color: rgb(212, 231, 248);
+    background-color: rgb(78, 144, 202);
   }
 
   #payment{
-    background-color: rgb(212, 231, 248);
+    background-color: rgb(78, 144, 202);
   }
 
   .charSecondSec{
@@ -310,25 +315,25 @@
     text-align: center;
     border-style: solid;
     border-width: 2px;
-    border-color: #060331;
+    border-color: #9a98aa;
     width: 50%;
   }
 
   .linkHead{
     text-decoration: underline;
     font-size: 26px;
-    color: #060331;
+    color: #ede5e5;
   }
 
   .linkInfo{
     font-size: 20px;
-    color: #060331;
+    color: #dcdada;
     text-decoration: underline;
   
   }
 
   .link:hover{
-    background-color: rgb(212, 231, 248);
+    background-color: rgb(7, 46, 79);
     transform: scale(1.02);
     transition: transform 0.3s;
   }
@@ -337,5 +342,6 @@
     text-align: center;
     text-decoration: underline;
     font-size: 35px;
+    color: #ede5e5;
   }
   
