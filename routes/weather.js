@@ -7,7 +7,7 @@ router.get('/', async function(req, res, next) {
   console.log(req.session.id);
   console.log(req.session.userID);
   console.log(req.session.isLoggedIn);
-
+  console.log(req.session.language);
   req.sessionStore.get(req.session.id, (err, sessionData) =>{
     if(err){
       console.log(err);

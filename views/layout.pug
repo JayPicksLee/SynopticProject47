@@ -17,7 +17,7 @@ html
           a(class = "nav_option", href='tourism') Tourism
         li 
           a(class = "nav_option", href='charities') Charities
-        li 
+        li    
       div(class = "nav_accounts")
           if session.isLoggedIn != true
             a(class = "nav_option", href='login', id = "signIn") Sign in 
@@ -37,10 +37,24 @@ html
       div(class="footercontainer")
        div(class="languagePicker")
         div.selectedLangauage 
+         if session.language == "en"
             button.selectedLanguageButton English
             div.content
-              a(href="/th") Thai   
-              a(href="") French
+              a(href="/th") ไทย
+              br
+              a(href="/kh") ខ្មែរ
+         else if session.language == "th"
+            button.selectedLanguageButton ไทย
+            div.content
+              a(href="/") English
+              br
+              a(href="/kh") ខ្មែរ
+         else if session.language == "kh"
+            button.selectedLanguageButton ខ្មែរ
+            div.content
+              a(href="/") English
+              br
+              a(href="/th") ไทย
       div(class="footerText")
         p @2024 Synoptic Project Group 47
         
