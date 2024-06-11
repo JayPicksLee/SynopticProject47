@@ -4,7 +4,6 @@ html
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
 
-
   nav(class="nav")
     div(class="nav_container")
       ul(class="nav_list")
@@ -36,5 +35,12 @@ html
 
     footer(class="footer")
       div(class="footercontainer")
+       div(class="languagePicker")
+        div.selectedLangauage 
+            button.selectedLanguageButton English
+            div.content
+              a(href="/th") Thai   
+              a(href="") French
+      div(class="footerText")
         p @2024 Synoptic Project Group 47
         

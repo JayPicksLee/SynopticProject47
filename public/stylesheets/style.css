@@ -74,7 +74,29 @@ a {
   width: 100%;
   color: rgb(189, 189, 189);
   text-align: center;
-
   position: fixed;
   bottom: 0;
+}
+
+.languagePicker{
+  width: 5%;
+}
+.content{
+  display: none;
+  background-color: hsl(0,0%,95%);
+  position: absolute;
+  min-width: 100px;
+  box-shadow: 2px 2px 5px black;
+}
+
+.selectedLangauage:hover .content{
+  display: block;
+}
+
+.selectedLanguageButton{
+  background-color: hsl(0,0%, 80%);
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
 }
