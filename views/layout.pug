@@ -46,19 +46,16 @@ html
             button.selectedLanguageButton English
             div.content
               a(href="/th") ไทย
-              br
               a(href="/kh") ខ្មែរ
          else if session.language == "th"
             button.selectedLanguageButton ไทย
             div.content
               a(href="/") English
-              br
               a(href="/kh") ខ្មែរ
          else if session.language == "kh"
             button.selectedLanguageButton ខ្មែរ
             div.content
               a(href="/") English
-              br
               a(href="/th") ไทย
       div(class="footerText")
         p @2024 Synoptic Project Group 47
