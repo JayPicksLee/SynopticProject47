@@ -24,8 +24,10 @@ router.get('/', function(req, res, next) {
       break;
     case "th": 
       res.render('thaiCharities');
+      break;
     case "kh": 
       res.render('khmerCharities');
+      break;
     default:
       break;
   }

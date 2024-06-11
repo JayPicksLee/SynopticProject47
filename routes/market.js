@@ -29,8 +29,10 @@ router.get('/', async function(req, res, next) {
       break;
     case "th": 
       res.render('thaiMarket', {items:items});
+      break;
     case "kh":
       res.render('khmerMarket', {items: items});
+      break;
     default:
       break;
   }
