@@ -20,7 +20,19 @@ router.get('/', function(req, res, next) {
     //Tracking if the visitor has visited the website before, normally the session id resets upon every visit to the main page. Now we can watch the visitor and what they do.
     req.session.visited = true;
 
-  res.render('login');
+    switch (req.session.language) {
+      case "en":
+        res.render('login', { title: 'Market'});
+        break;
+      case "th": 
+        res.render('thaiLogin');
+        break;
+      case "kh": 
+        res.render('khmerLogin');
+        break;
+      default:
+        break;
+    }
 });
 
 //POST METHOD login: Logging in the user by checking if the user first exists, and then checking the users login details (username, password). The users account level is then checked in order to direct them to the correct page.
