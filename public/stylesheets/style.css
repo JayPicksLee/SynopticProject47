@@ -118,7 +118,7 @@ a {
   position: relative;
 }
 
-.content{
+.language-content{
   display: none;
   background-color: hsl(0,0%,95%);
   position: absolute;
@@ -126,7 +126,7 @@ a {
   box-shadow: 2px 2px 5px black;
 }
 
-.selectedLangauage:hover .content{
+.selectedLangauage:hover .language-content{
   display: block;
 }
 

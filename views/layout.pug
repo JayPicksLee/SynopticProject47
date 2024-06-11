@@ -44,17 +44,17 @@ html
         div.selectedLangauage 
          if session.language == "en"
             button.selectedLanguageButton English
-            div.content
+            div.language-content
               a(href="/th") ไทย
               a(href="/kh") ខ្មែរ
          else if session.language == "th"
             button.selectedLanguageButton ไทย
-            div.content
+            div.language-content
               a(href="/") English
               a(href="/kh") ខ្មែរ
          else if session.language == "kh"
             button.selectedLanguageButton ខ្មែរ
-            div.content
+            div.language-content
               a(href="/") English
               a(href="/th") ไทย
       div(class="footerText")
