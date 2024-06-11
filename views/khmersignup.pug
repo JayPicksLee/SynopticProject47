@@ -1,0 +1,40 @@
+extends layout
+
+block content
+  link(rel='stylesheet', href='/stylesheets/signup.css')
+  main
+   section
+    div(class = "wrapper")
+     header
+       h1 ចុះ​ឈ្មោះ
+     div(class ="underWrapper")
+       p(class="underWrapper-content") បញ្ចូលព័ត៌មានលម្អិតរបស់អ្នកដើម្បីបន្ត
+
+     div(class = "signup")
+      form(action='/signup/createNewUser', method= 'POST', class="signup-form")
+        div(class="signupInputTop")
+          label(for='firstName') 
+          input#username(type='text' name='firstName' placeholder='First name*', class ="signup-input",required=true)
+
+        div(class="signupInput")
+          label(for='lastName')
+          input#username(type='text' name='lastName' placeholder='Last name', class ="signup-input",  required=false)
+
+        div(class="signupInput")
+          label(for='password')
+          input#password(type='text' name='password' placeholder='Password*'  class ="signup-input", required=true)
+        
+        div(class="signupInput")
+          label(for='email')
+          input#email(type='text' name='email' placeholder='Email*' class ="signup-input", required= true)
+        
+        div(class="signupInput")
+          label(for='phoneNumber')
+          input#phoneNumber(type='text' name='phoneNumber' placeholder='Phone Number' class ="signup-input" required= false)
+      
+        div(class="signupInput-button")
+          input(type='submit' value='Sign Up', id="signup-button")
+        if errorMessage
+            p.error= errorMessage
+      p ប្រសិនបើអ្នកមានគណនីរួចហើយ
+       a(href='/login', class = "links") ចូល
