@@ -1,0 +1,39 @@
+extends layout
+
+block content
+  link(rel='stylesheet', href='/stylesheets/booking.css')
+  h1 บุ๊คทัวร์
+
+  .intro-section
+    .intro-info
+      h2 สำรวจ Pu Ngaolด้วยทัวร์พร้อมไกด์ของเรา Pu Ngaol 
+      p ค้นพบความงามและวัฒนธรรมของพุงอลพร้อมไกด์ท้องถิ่นของเรา เลือกทัวร์ เลือกวัน และเตรียมพร้อมสำหรับประสบการณ์อันน่าจดจำ
+
+  .tour-list-section
+    .tour-list
+      .tour-item
+        h2 จุดหมายที่ 1 - £30
+        p ไกด์ทัวร์: ไกด์ 1
+        p คำอธิบายทัวร์
+        label
+          input(type='radio', name='tourId', value='tour1')
+          | เลือกทัวร์นี้
+      .tour-item
+        h2 จุดหมายที่ 2 - £50
+        p ไกด์ทัวร์: ไกด์  2
+        p คำอธิบายทัวร์
+        label
+          input(type='radio', name='tourId', value='tour2')
+          | เลือกทัวร์นี้
+
+  .date-selection
+    form
+      label(for='date') เลือกวัน:
+      input(type='date', id='date', name='date', required)
+      button(type='submit') ยืนยัน
+
+  .info-section
+    #confirmationMessage(style='display:none')
+      h2 บุ๊คเรียบร้อย!
+      p ขอบขุนที่บุ๊คกับเรา.
+

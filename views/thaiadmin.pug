@@ -1,0 +1,93 @@
+extends layout
+
+block content
+ link(rel='stylesheet', href ='/stylesheets/admin.css')
+
+ main
+  
+   h1 หน้าแอดมิน
+   section(class = "admin_main_content")
+
+    div(class ="market")
+      div(class = "admin_titles")
+        h2 จัดการตลาด
+          button(onclick="showNewMarketItemDialog()", id = "newButton") เพิ่มของใหม่
+      dialog(id="newItemDialog")
+       form(action='/admin/AddItem', method='POST')
+        label(for="newItemName") ชื่อ
+        input(type="text", name ="newItemName")
+
+        label(for="newItemPrice") ราคา
+        input(type="text", name ="newItemPrice")
+
+        label(for="newItemType") ชนิด
+        input(type="text", name ="newItemType")
+
+        label(for="newItemAvailability") เหลือกี่ชิ้น
+        input(type="text", name ="newItemAvailability")
+        button(type="submit") เพิ่ม
+
+      div(class = "admin_items")
+        ul 
+        each item in items
+          div(class = "tour")
+          li 
+            p ชื่อ: #{item.name}
+            p ราคา: #{item.price}
+            p ชนิด: #{item.type}
+            p เหลือกี่ชิ้น: #{item.availability}
+            form(action='/admin/deleteItem', method='POST', class = "button")
+              input(type="hidden", name ="id", value = item._id)
+              button(type = "submit", class = "delete_button") ลบของ
+
+    div(class ="tours")
+      div(class = "admin_titles")
+        h2 จัดการทัวร์
+          button(onclick="showNewTourDialog()", id = "newButton") Add new tour
+      dialog(id="newTourDialog")
+       form(action='/admin/AddTour', method='POST')
+        label(for="newTourGuide") ไกด์ทัวร์
+        input(type="text", name ="newTourGuide")
+
+        label(for="newDestination") จุดหมาย
+        input(type="text", name ="newDestination")
+
+        label(for="newDescription") คำอธิบาย
+        input(type="text", name ="newDescription")
+
+        label(for="newPrice") ราคา
+        input(type="text", name ="newPrice")
+
+        label(for="newCapacity") ความจุ
+        input(type="text", name ="newCapacity")
+
+        button(type="submit") เพิ่ม
+
+
+      div(class = "admin_items")
+        ul 
+          each tour in tours
+            div(class = "tour")
+            li
+              p ไกด์ทัวร์: #{tour.tourGuide}
+              p จุดหมาย: #{tour.destination}
+              p คำอธิบาย: #{tour.description}
+              p ราคา: #{tour.price}
+              p ความจุ: #{tour.capacity}
+              form(action='/admin/deleteTour', method='POST', class = "button")
+              input(type="hidden", name ="id", value = tour._id)
+              button(type = "submit", class = "delete_button") ลบทัวร์
+
+    div(class ="users")
+      h2 จัดการผู้ใช้งาน
+
+      div(class = "admin_items")
+        ul 
+        each user in users 
+          div(class = "user")
+          li 
+            p อีเมล: #{user.email}
+            form(action="/admin/deleteUserAccount", method="POST")
+              input(type="hidden", name="id", value=user._id)
+              button(type="submit", class = "delete_button") ลบผู้ใช้
+    script(src="/javascripts/adminCS.js")
