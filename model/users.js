@@ -83,7 +83,8 @@ exports.signUpUser = async (firstName, lastName, password, email, phoneNumber) =
         if(email.indexOf(" ") > -1 ){
             throw new Error("Email cannot have white space.");
 
-        }else if(await this.checkExists(email) == true){
+        }
+        if(await this.checkExists(email) == true){
             throw new Error("Email already exists");
         }else{
             console.log("Checking password for white space...")
@@ -95,7 +96,6 @@ exports.signUpUser = async (firstName, lastName, password, email, phoneNumber) =
 
             }  
         }
-    
 }
 
 exports.displayUserAccounts = async () => 

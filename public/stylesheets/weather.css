@@ -43,6 +43,10 @@ body{
     text-align: center;
 }
 
+img{
+    width:15%;
+    height:auto;
+}
 
 
 /* SmartPhone View */
