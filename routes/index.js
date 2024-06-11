@@ -21,8 +21,10 @@ router.get('/', function(req, res, next) {
   //Tracking if the visitor has visited the website before, normally the session id resets upon every visit to the main page. Now we can watch the visitor and what they do.
   req.session.visited = true;
 
-  res.render('index', { title: 'Pu Ngaol, Here and Now' });
+  res.render('index' , {title: 'Pu Ngaol, Here and Now' });
+
 });
+
 //GET REQUEST th: For the thai version of the website
 router.get('/th', function(req, res, next) {
   console.log(req.session);

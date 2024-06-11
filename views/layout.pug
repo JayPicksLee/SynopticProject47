@@ -8,7 +8,12 @@ html
     div(class="nav_container")
       ul(class="nav_list")
         li 
+         if session.language == "en"
           a(class = "nav_option", href='/') Home
+         if session.language == "th"
+          a(class = "nav_option", href='/th') Home
+         if session.language == "kh"
+          a(class = "nav_option", href='/kh') Home
         li 
           a(class = "nav_option", href='weather') Weather
         li 

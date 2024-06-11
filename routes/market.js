@@ -20,10 +20,12 @@ router.get('/', async function(req, res, next) {
   //Tracking if the visitor has visited the website before, normally the session id resets upon every visit to the main page. Now we can watch the visitor and what they do.
   req.session.visited = true;
   let items = await marketmodel.getItems();
-  console.log(items)
+
+  console.log
+  (items)
   switch (req.session.language) {
     case "en":
-      res.render('market', { title: 'Market', items: items});
+      res.render('market', {items: items});
       break;
     case "th": 
       res.render('thaiMarket', {items:items});
