@@ -51,26 +51,33 @@ html
             a(class = "nav_option", href='login', id = "signIn") ลงสมัคร
            if session.language == "kh"
             a(class = "nav_option", href='login', id = "signIn") ចូល
+          else
+          
+            if session.isAdmin == true
+              if session.language == "en"
+                a(class = "nav_option", href='admin', id = "admin")  Admin 
+              if session.language == "th"
+                a(class = "nav_option", href='admin', id = "admin")  แอดมิน
+              if session.language == "kh"
+                a(class = "nav_option", href='admin', id = "admin")  អ្នកគ្រប់គ្រង 
+                form(action='logout', method='POST', id="logout_button")
+                  input(type="submit", name="logout", value="Signout", id="logout_input")
 
-          else if session.isAdmin == true
-           if session.language == "en"
-            a(class = "nav_option", href='admin', id = "admin")  Admin 
-           if session.language == "th"
-            a(class = "nav_option", href='admin', id = "admin")  แอดมิน
-           if session.language == "kh"
-            a(class = "nav_option", href='admin', id = "admin")  អ្នកគ្រប់គ្រង 
+            if session.isAdmin == false
+              if session.language == "en"
+                a(class = "nav_option", href='user', id = "user")  User 
+              if session.language == "th"
+                a(class = "nav_option", href='user', id = "user")  ผู้ใช้          
+              if session.language == "kh"
+                a(class = "nav_option", href='user', id = "user")  អ្នកប្រើ 
+
             form(action='logout', method='POST', id="logout_button")
-              input(type="submit", name="logout", value="Signout", id="logout_input")
-          else  
-           if session.language == "en"
-            a(class = "nav_option", href='user', id = "user")  User 
-           if session.language == "th"
-            a(class = "nav_option", href='user', id = "user")  ผู้ใช้          
-           if session.language == "kh"
-            a(class = "nav_option", href='user', id = "user")  អ្នកប្រើ 
-           form(action='logout', method='POST', id="logout_button")
-              input(type="submit", name="logout", value="Signout", id="logout_input")
-
+             if session.language == "en"  
+              input(type="submit", name="logout", value="Signout", id="logout_input")        
+             else if session.language == "th"
+              input(type="submit", name="logout", value="ออกจากระบบ", id="logout_input")            
+             else if session.language == "kh"
+              input(type="submit", name="logout", value="ចាកចេញ", id="logout_input")
   body
     block content
 
