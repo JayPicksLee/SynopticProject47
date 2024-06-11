@@ -82,6 +82,6 @@ block content
          li 
           p Email: #{user.email}
           form(action="/admin/deleteUserAccount", method="POST")
-            input(type="hidden", name="userId", value=user._id)
+            input(type="hidden", name="id", value=user._id)
             button(type="submit") Delete Account
     script(src="/javascripts/adminCS.js")

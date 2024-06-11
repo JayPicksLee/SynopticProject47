@@ -80,7 +80,7 @@ exports.signUpUser = async (firstName, lastName, password, email, phoneNumber) =
         const passwordHashed = await bcrypt.hash(password, 8);
         console.log("Checking if user already exists...");
 
-        if(email.indexOf(" " > -1 )){
+        if(email.indexOf(" ") > -1 ){
             throw new Error("Email cannot have white space.");
 
         }else if(await this.checkExists(email) == true){
@@ -110,14 +110,13 @@ exports.displayUserAccounts = async () =>
         }
     }
 
-exports.deleteUserAccount = async (userId) =>
-    {
-        try
-        {
-            return await User.deleteOne({ _id: userId });
-        }
-        catch (error)
-        {
-            throw error;
+    exports.deleteUserAccount = async (userId) => {
+        try {
+            console.log(userId);
+            await User.findByIdAndDelete(userId);
+    
+        } catch (error) {
+            console.log("ERROR DELETEING USER");
         }
     }
+    
