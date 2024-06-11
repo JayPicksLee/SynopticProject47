@@ -3,16 +3,23 @@ extends layout
 block content
     link(rel='stylesheet', href='/stylesheets/weather.css')
     div(class = "text_container")
-        div(class = "text")
-            
+        div(class = "text")           
             //have to put database info here, including a potential IF statement for flood/drought warnings 
-            h3 --°C 
-            p Description:......
-        for data in weatherData 
-         p #{data.temp}
-         br
-         p #{data.floodRisk}
-         br
-         p #{data.droughtRisk}
-         br
-         p #{data.date}
+            for data in weatherData 
+                h3 #{data.temp}°C 
+                br
+                if data.floodRisk > 0.75
+                    p high flood risk!
+                else if data.floodRisk > 0.5
+                    p slight flood risk 
+                else 
+                    p no flood risk
+                p #{data.droughtRisk}
+                br
+                if data.droughtRisk > 0.75
+                    p high drought risk!
+                else if data.droughtRisk > 0.5
+                    p slight drought risk 
+                else 
+                    p no drought risk
+                
