@@ -30,13 +30,13 @@ router.get('/', async function(req, res, next) {
 
   switch (req.session.language) {
     case "en":
-      res.render('user');
+      res.render('user', {user: userInfo});
       break;
     case "th": 
-      res.render('thaiUser');
+      res.render('thaiUser', {user: userInfo});
       break;
     case "kh": 
-      res.render('khmerUser');
+      res.render('khmerUser', {user: userInfo});
       break;
     default: 
       break;
