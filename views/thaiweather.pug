@@ -1,0 +1,34 @@
+extends layout
+
+block content
+    link(rel='stylesheet', href='/stylesheets/weather.css')
+    div(class = "text_container")
+        div(class = "text")           
+            //have to put database info here, including a potential IF statement for flood/drought warnings 
+            for data in weatherData 
+                h3 #{data.temp}°C 
+                if data.floodRisk > 0.75
+                    img(src='/images/high_flood_risk.png' alt='high flood risk')
+                else if data.floodRisk > 0.5
+                    img(src='/images/medium_flood_risk.png' alt='medium flood risk')
+                else if data.floodRisk > 0.25
+                    img(src='/images/low_flood_risk.png' alt='low flood risk')
+
+                br
+                if data.floodRisk > 0.75
+                    p โอกาศน้ำท่วมสูง!
+                else if data.floodRisk > 0.5
+                    p โอกาศน้ำท่วมปานกลาง!
+                else if data.floodRisk > 0.25
+                    p โอกาศน้ำท่วมน้อย!
+                else 
+                    p ไม่มีน้ำท่วม
+                if data.droughtRisk > 0.75
+                    p โอกาศแล้งสูง
+                else if data.droughtRisk > 0.5
+                    p โอกาศน้ำท่วมแล้งปานกลาง
+                else if data.droughRisk > 0.25
+                    p โอกาศแล้งต่ำ
+                else 
+                    p ไม่มีความแล้ง
+                p #{data.date}
