@@ -167,7 +167,7 @@ body{
     border-width: 2px;
     border-color: #025892;
     border-radius: 7px;
-    background-color: rgb(212, 231, 248);
+    background-color: rgb(78, 144, 202);
   }
   
   @media only screen and (max-width: 1000px) {
@@ -208,6 +208,7 @@ body{
     font-size: large;
     align-self: center;
     border-radius: 50px;
+  
   }
   
   label {
@@ -282,11 +283,11 @@ body{
     background-color:   #137238;;
   }
   #donation{
-    background-color: rgb(212, 231, 248);
+    background-color: rgb(78, 144, 202);
   }
 
   #payment{
-    background-color: rgb(212, 231, 248);
+    background-color: rgb(78, 144, 202);
   }
 
   .charSecondSec{
