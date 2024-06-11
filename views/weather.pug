@@ -8,3 +8,11 @@ block content
             //have to put database info here, including a potential IF statement for flood/drought warnings 
             h3 --°C 
             p Description:......
+        for data in weatherData 
+         p #{data.temp}
+         br
+         p #{data.floodRisk}
+         br
+         p #{data.droughtRisk}
+         br
+         p #{data.date}
