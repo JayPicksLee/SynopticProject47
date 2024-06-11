@@ -6,3 +6,11 @@ block content
         div(class = "text")
             h3 --°C
             p Description:......
+        for data in weatherData 
+         p #{data.temp}
+         br
+         p #{data.floodRisk}
+         br
+         p #{data.droughtRisk}
+         br
+         p #{data.date}

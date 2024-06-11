@@ -37,7 +37,7 @@ router.post('/createNewUser', async (req, res, next) => {
     try {
         await usermodel.signUpUser(firstName, lastName, password, email, phoneNumber);
         console.log("Signup successful");
-
+        return res.redirect("/login");
     } catch (error)  { 
         res.render('signup', { errorMessage: error.message });
     }
