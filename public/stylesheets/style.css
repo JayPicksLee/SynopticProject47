@@ -94,11 +94,11 @@ a {
 #logout_input{
   width: 93%;
   padding: 10px;
-  border-radius: 5px;
   background-color: #2b2b2b;
   color: #fff;
   cursor: pointer;
   margin-left: 4%;
+  border-radius: 10px;
 }
 
 #logout_input:hover {
@@ -171,3 +171,14 @@ a {
 .selectedLangauage:hover .language-content {
   display: block;
 }
+
+button, input[type="submit"] {
+  width:fit-content;
+  padding: 10px;
+  border-radius: 5px;
+  border:none;
+  background-color: #4b4b4b;
+  color: #fff;
+  cursor: pointer;
+  margin-left: 4%;
+ }
