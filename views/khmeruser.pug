@@ -1,0 +1,58 @@
+extends layout
+
+block content
+
+ link(rel='stylesheet', href = '/stylesheets/user.css')
+ main
+  h1 កម្រងព័ត៌មានអ្នកប្រើប្រាស់
+  section(class="section")
+   div(class="wrapper")
+    header
+     h2 ព័ត៌មានលម្អិតផ្ទាល់ខ្លួន
+     p ធ្វើបច្ចុប្បន្នភាពព័ត៌មានផ្ទាល់ខ្លួន
+    div(class="box")
+     div(class="content")
+      form(class="accountDetails")
+       div(class="row")
+        label(for="firstName") ឈ្មោះដំបូង:
+        input(type="text",name= "firstName",value=user.firstName, class="inputField")
+       div(class="row")
+        label(for="lastName") នាមត្រកូល:
+        input(type="text", name = "lastName",value=user.lastName, class="inputField")
+       input(type="submit", name="updateDetails", value="Save", id="updateDetails_input")
+   div(class="wrapper")   
+    header
+     h2 ព័ត៌មានទំនាក់ទំនង
+     p របៀបដែលយើងនឹងទាក់ទងជាមួយអ្នក។
+    div(class="box")
+     div(class="content")
+      form(class="accountDetails")
+       div(class="row")
+        label(for="email") អ៊ីមែល:
+        input(type="text",name= "email",value=user.email, class="inputField")
+       div(class="row")
+        label(for="phoneNumber") លេខទូរសព្ទ:
+        input(type="text", name = "phoneNumber",value=user.phoneNumber, class="inputField")
+   div(class="wrapper")
+    header
+     h2 ព្រឹត្តិបត្រ
+    div(class="box")
+     div(class="content")
+      form()
+
+   div(class="wrapper")
+    header
+     h2 ដំណើរកម្សាន្តដែលបានកក់ទុក
+    div(class="box")
+     div(class="content")
+
+
+   div(class="wrapper")
+    header 
+     h2 លុប​គណនី 
+     p លុបគណនីរបស់អ្នកជាអចិន្ត្រៃយ៍។ នេះមិនអាចត្រឡប់វិញបានទេ។ ព័ត៌មានទាំងអស់ត្រូវបានលុប។
+
+    div(class="box")
+     div(class="content")    
+      form(action='/user/deleteAccount', method='POST', id="delete_button")
+       input(type="submit", name="deleteAccount", value="Delete Account", id="deleteAccount_input")
