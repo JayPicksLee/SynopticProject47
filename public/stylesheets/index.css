@@ -124,6 +124,9 @@ a{
     background-image: url('/images/question mark.jpg');
 }
 
+/* media querey for mobile view, lowers text size for box hover and aligns them
+with a mobile view, as well as fixing sizing issues for the title*/
+
 @media only screen and (max-width: 768px) {
     h1{
         font-size: 75px;
