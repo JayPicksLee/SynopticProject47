@@ -4,7 +4,9 @@ block content
     link(rel='stylesheet', href='/stylesheets/weather.css')
     div(class = "text_container")
         div(class = "text")
-            h3 --°C
+            
+            //have to put database info here, including a potential IF statement for flood/drought warnings 
+            h3 --°C 
             p Description:......
         for data in weatherData 
          p #{data.temp}

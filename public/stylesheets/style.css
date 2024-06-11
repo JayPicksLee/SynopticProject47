@@ -2,6 +2,7 @@ body {
   margin:0;
   background-color: white;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin-bottom: 50px;
 }
 
 a {
@@ -67,10 +68,13 @@ a {
   display: inline-flex;
   align-items: right;
 }
+
 .footer {
   background-color: #3f3f3f;
   width: 100%;
   color: rgb(189, 189, 189);
   text-align: center;
-  padding: 10px 0;
+
+  position: fixed;
+  bottom: 0;
 }
