@@ -11,20 +11,17 @@ block content
 
   .tour-list-section
     .tour-list
-      .tour-item
-        h2 Destination 1 - £30
-        p Tour Guide: Guide 1
-        p Description of the tour
-        label
-          input(type='radio', name='tourId', value='tour1')
-          | Select this tour
-      .tour-item
-        h2 Destination 2 - £50
-        p Tour Guide: Guide 2
-        p Description of the tour
-        label
-          input(type='radio', name='tourId', value='tour2')
-          | Select this tour
+      if tours && tours.length
+        each tour in tours
+          .tour-item
+            h2 #{tour.destination} - #{tour.price}
+            p Tour Guide: #{tour.tourGuide}
+            p Description: #{tour.description}
+            label
+              input(type='radio', name='tourId', value=tour._id)
+              | Select this tour
+      else
+        p No tours available at the moment.
 
   .date-selection
     form
@@ -36,4 +33,4 @@ block content
     #confirmationMessage(style='display:none')
       h2 Booking Confirmed!
       p Thank you for booking a tour with us.
-
+    

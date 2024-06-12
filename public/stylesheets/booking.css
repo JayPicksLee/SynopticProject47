@@ -50,11 +50,13 @@ h1 {
 }
 
 .tour-item {
+  margin: auto;
   padding: 15px;
   background: rgb(215, 215, 215);
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   text-align: left;
+  width: 85%;
 }
 
 .tour-item h2 {
@@ -95,6 +97,7 @@ input[type="date"] {
 }
 
 button {
+  margin: auto;
   background: #28a745;
   color: white;
   border: none;
