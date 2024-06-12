@@ -15,7 +15,6 @@ const Weather = mongoose.model("Weather", weatherSchema)
 exports.getWeatherData=async ()=>{
     try {
         const all = await Weather.find({});
-        console.log("Getting all weather data");
         return all;
     } catch (error) {
         throw new Error("Error getting weather: " +error.message);
