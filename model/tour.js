@@ -17,7 +17,7 @@ const Tour = mongoose.model("Tour", tourSchema)
 exports.getTours=async ()=>{
     try {
         const all = await Tour.find({});
-        console.log("Finding all tours");
+
         return all;
     } catch (error) {
         throw new Error("Error getting tours: " +error.message);

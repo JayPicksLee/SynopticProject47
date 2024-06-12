@@ -15,9 +15,14 @@ const UserSchema = new Schema({
 const User = mongoose.model("User", UserSchema)
 
 exports.getUsers= async ()=>{
-    const all = await User.find({});
+    try {
+        const all = await User.find({});
 
-    return all;
+        return all;
+    } catch (error) {
+        throw new Error("Error getting users: " + error.message);
+    }
+
 }
 
 exports.getUserById= async (Id)=>{
