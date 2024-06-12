@@ -39,7 +39,7 @@ block content
                     label(for="email") E-mail 
                     input(type="email" name="email" id="email" required)
                     label(for="mobile") Mobile Phone Number 
-                    input(type="tel" name="mobile" id="mobile" required)
+                    input(type="tel" name="mobile" id="mobile" maxlength="12" required)
                     label(for="donation") Donation Ammount 
                     select(name="donation" id="donationAmount" required) 
                         option(value="£5")  £5
@@ -51,13 +51,13 @@ block content
                 fieldset 
                     legend Payment 
                     label(for="cardNum") Card number
-                    input(type="number" name="cardNum" id="cardNum" required)
+                    input(type="number" name="cardNum" id="cardNum" maxlength="12" required)
                     label(for="cardName") Name on card
                     input(type="text" name="cardName" id="cardName" required)
                     label(for="exdate") experatin date
                     input(type="date" name="exdate" id="exdate" required)
                     label(for="code") security code 
-                    input(type="password" name="code" id="code" required)  
+                    input(type="password" name="code" id="code" maxlength="3" required)  
                     button(id = "pay") Confirm
         script(src="/javascripts/request.js")
     h1(class ="linkSec") Other ways to donate
