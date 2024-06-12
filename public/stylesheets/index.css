@@ -50,9 +50,9 @@ a{
 
 #marketOverlayText{
     position: absolute;
-    top: 117%;
-    left: 2%;
-    font-size: 32px;
+    top: 123%;
+    left: 6%;
+    font-size: 24px;
     color: transparent;
     text-align: left;
     font-family: fantasy;
@@ -65,9 +65,9 @@ a{
 
 #toursOverlayText{
     position: absolute;
-    top: 117%;
-    left: 27%;
-    font-size: 32px;
+    top: 120%;
+    left: 31%;
+    font-size: 24px;
     color: transparent;
     text-align: left;
     font-family: fantasy;
@@ -81,8 +81,8 @@ a{
 #weatherOverlayText{
     position: absolute;
     top: 123%;
-    left: 52%;
-    font-size: 32px;
+    left: 55.5%;
+    font-size: 24px;
     color: transparent;
     text-align: left;
     font-family: fantasy;
@@ -96,8 +96,8 @@ a{
 #howToOverlayText{
     position: absolute;
     top: 124%;
-    left: 76.5%;
-    font-size: 32px;
+    left: 80.5%;
+    font-size: 24px;
     color: transparent;
     text-align: left;
     font-family: fantasy;
@@ -139,30 +139,46 @@ with a mobile view, as well as fixing sizing issues for the title*/
     }
 
     #marketOverlayText{
-        font-size: 14px;
+        font-size: 12px;
         top: 135%;
         left: 3.5%;
         line-height: 2;
     }
 
+    #marketButton:hover ~ #marketOverlayText{
+        color: transparent;
+    }
+
     #toursOverlayText{
-        font-size: 14px;
+        font-size: 12px;
         top: 135%;
         left: 28%;
         line-height: 2;
     }
 
+    #toursButton:hover ~ #toursOverlayText{
+        color: transparent;
+    }
+
     #weatherOverlayText{
-        font-size: 14px;
+        font-size: 12px;
         top: 137%;
         left: 53%;
         line-height: 2;
     }
 
+    #weatherButton:hover ~ #weatherOverlayText{
+        color: transparent;
+    }
+
     #howToOverlayText{
-        font-size: 14px;
+        font-size: 12px;
         top: 138%;
         left: 76.5%;
         line-height: 2;
+    }
+
+    #howToButton:hover ~ #howToOverlayText{
+        color: transparent;
     }
 }
