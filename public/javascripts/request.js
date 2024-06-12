@@ -1,14 +1,4 @@
-/*document.getElementById('donate').addEventListener('submit', function(event) {
-    event.preventDefault();
-    const forename = document.getElementById('forename').value;
-    const surname = document.getElementById('surname').value;
-    const email = document.getElementById('email').value;
-    const mobile = document.getElementById('mobile').value;
-    const amount = document.getElementById('donation').value;
 
-    console.log(`Name: ${forename} ${surname}, Email: ${email}, Subject: ${mobile}, Message: ${amount}`);
-    alert("Thank you for donateing " + amount);
-});*/
 document.getElementById('donation').addEventListener('submit', function(event) {
     event.preventDefault();
     const forename = document.getElementById('forename').value;
@@ -33,7 +23,7 @@ document.getElementById('payment').addEventListener('submit', function(event) {
    
 
     console.log(`Name: ${cardName}, Email: ${cardNum}, Subject: ${date}, Message: ${code}`);
-    alert("Thank you for donating");
+    alert("Your donation has been accepted. Thank you for donating");
     let form3 = document.querySelector(".payment");
     let form4 = document.querySelector(".form2")
     form3.classList.toggle("showForm");
