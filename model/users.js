@@ -26,21 +26,33 @@ exports.getUsers= async ()=>{
 }
 
 exports.getUserById= async (Id)=>{
-    const user = await User.findById({_id: Id})
-
-    return user;
+    try {
+        const user = await User.findById({_id: Id})
+        return user;
+    } catch (error) {
+        throw new Error("Error getting user: " + error.message);
+    }
 }
 
 exports.getUserID=async (email)=>{
-    const id = await User.findOne({email: email})
+    try {
+        const id = await User.findOne({email: email})
 
-    return id.id;
+        return id._id;
+    } catch (error) {
+        throw new Error("Error getting user ID: " + error.message);
+    }
+
 }
 
 exports.getUserStatus=async (email)=>{
-    const level = await User.findOne({email: email})
+    try {
+        const level = await User.findOne({email: email})
 
-    return level.accountLevel;
+        return level.accountLevel;
+    } catch (error) {
+        throw new Error("Error getting user status: " + error.message);
+    }
 }
 
 exports.checkExists = async (email)=>{
@@ -61,12 +73,17 @@ exports.checkExists = async (email)=>{
 exports.checkLoginDetails = async (email, password)=>{
 
     try {
-        
         let user = await User.findOne({email: email})
 
-        if (!user || !bcrypt.compare(password, user.password)) {
+        if (!user) {
             return false;
-        }        
+        }
+
+        const passwordMatch = await bcrypt.compare(password, user.password);
+
+        if(!passwordMatch){
+            return false;
+        }
 
         return user;
     } catch (error) {
