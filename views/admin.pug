@@ -79,8 +79,8 @@ block content
               p Price: #{tour.price}
               p Capacity: #{tour.capacity}
               form(action='/admin/deleteTour', method='POST', class = "button")
-              input(type="hidden", name ="id", value = tour._id)
-              button(type = "submit", class = "delete_button") Delete Tour
+               input(type="hidden", name ="id", value = tour._id)
+               button(type = "submit", class = "delete_button") Delete Tour
 
     div(class ="users")
       h2 Manage Users
