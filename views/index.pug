@@ -2,7 +2,7 @@ extends layout
 
 block content
   head
-  link(rel='stylesheet', href='/stylesheets/index.css')
+    link(rel='stylesheet', href='/stylesheets/index.css')
   h1
     | Pu Ngaol, Here and Now
     br
@@ -15,60 +15,58 @@ block content
     | 
     br
     | ⮮ Step Into Our World ⮯
-  div(id="buttonContainer")  
-    button(class="homeButtons" id="marketButton")
-      a(href="market" class="homeButtons") Market
+  div(id="buttonContainer")
+    a(href="market", class="homeButtons" id="marketButton")
+      | Market
       br
       | 🍎
-    button(class="homeButtons" id="toursButton" href="tourism")
-      a(href="tourism" class="homeButtons") Tours
+      .hidden-info
+        p ○ Naturally sourced food
+        br
+        p ○ Support local farming
+        br
+        p ○ Sustainably gathered
+        br
+        p ○ Fair price
+        br
+        p ○ Made with love
+        br
+        p ○ Click to find out more!
+    a(href="tourism", class="homeButtons" id="toursButton")
+      | Tours
       br
       | 🏞️
-    button(class="homeButtons" id="weatherButton" href="weather")
-      a(href="weather" class="homeButtons") Weather
+      .hidden-info
+        p ○ Region information
+        br
+        p ○ Points of interest
+        br
+        p ○ Lead by experts
+        br
+        p ○ Fairly priced
+        br
+        p ○ Support the locals
+        br
+        p ○ Click to find out more!
+    a(href="weather", class="homeButtons" id="weatherButton")
+      | Weather
       br
       | ☀️
-    button(class="homeButtons" id="howToButton")
-      a(href="instructions" class="homeButtons") How To
+      .hidden-info
+        p ○ Check for floods
+        br
+        p ○ Check for droughts
+        br
+        p ○ Be prepared
+        br
+        p ○ Click to find out more!
+    a(href="instructions", class="homeButtons" id="howToButton")
+      | How To
       br
       | ❓
-    a(id="marketOverlayText" href="market")
-      |○ Naturally sourced food
-      br
-      |○ Support local farming
-      br
-      |○ Sustainably gathered
-      br
-      |○ Fair price
-      br
-      |○ Made with love
-      br
-      |○ Click to find out more!
-    a(id="toursOverlayText" href="tourism")
-      |○ Region information
-      br
-      |○ Points of interest
-      br
-      |○ Lead by experts
-      br
-      |○ Fairly priced
-      br
-      |○ Support the locals
-      br
-      |○ Click to find out more!
-    a(id="weatherOverlayText" href="weather")
-      |○ Check for floods
-      br
-      |○ Check for droughts
-      br
-      |○ Be prepared
-      br
-      |○ Click to find out more!
-    a(id="howToOverlayText" href="instructions")
-      |○ How to use the website
-      br
-      |○ Any questions visit here
-      br
-      |○ Click to find out more!
-      // these are hidden anchor elements that will
-      // be displayed when the buttons are hovered
+      .hidden-info
+        p ○ How to use the website
+        br
+        p ○ Any questions visit here
+        br
+        p ○ Click to find out more!

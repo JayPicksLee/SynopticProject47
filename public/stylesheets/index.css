@@ -18,6 +18,11 @@ h1{
 
 a{
     text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
 }
 
 #buttonContainer{
@@ -29,6 +34,7 @@ a{
 }
 
 .homeButtons{
+    position:relative;
     width: 800px;
     height: 450px;
     background-size: cover;
@@ -45,68 +51,32 @@ a{
 }
 
 .homeButtons:hover {
-    filter: brightness(0.2);
+    filter: brightness(0.9);
 }
 
-#marketOverlayText{
+.hidden-info {
+    display: none;
     position: absolute;
-    top: 123%;
-    left: 6%;
-    font-size: 24px;
-    color: transparent;
-    text-align: left;
-    font-family: fantasy;
-    line-height: 1.5;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(164, 164, 164, 0.8);
+    color: #fff;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
 }
 
-#marketButton:hover ~ #marketOverlayText{
-    color: aliceblue;
+.homeButtons:hover .hidden-info {
+    display: flex;
+    flex-direction: column;
+    opacity: 1;
 }
 
-#toursOverlayText{
-    position: absolute;
-    top: 120%;
-    left: 31%;
-    font-size: 24px;
-    color: transparent;
-    text-align: left;
-    font-family: fantasy;
-    line-height: 1.5;
-}
-
-#toursButton:hover ~ #toursOverlayText{
-    color: aliceblue;
-}
-
-#weatherOverlayText{
-    position: absolute;
-    top: 123%;
-    left: 55.5%;
-    font-size: 24px;
-    color: transparent;
-    text-align: left;
-    font-family: fantasy;
-    line-height: 1.5;
-}
-
-#weatherButton:hover ~ #weatherOverlayText{
-    color: aliceblue;
-}
-
-#howToOverlayText{
-    position: absolute;
-    top: 124%;
-    left: 80.5%;
-    font-size: 24px;
-    color: transparent;
-    text-align: left;
-    font-family: fantasy;
-    line-height: 1.5;
-}
-
-#howToButton:hover ~ #howToOverlayText{
-    color: aliceblue;
-}
 
 #marketButton{
     background-image: url('/images/market.jpg');
@@ -133,52 +103,14 @@ with a mobile view, as well as fixing sizing issues for the title*/
     }
 
     .homeButtons{
-        font-size: 36px;
+        font-size: 18px;
         -webkit-text-stroke-width: 2px;
         -webkit-text-stroke-color: black;
     }
 
-    #marketOverlayText{
+    .hidden-info{
         font-size: 12px;
-        top: 135%;
-        left: 3.5%;
-        line-height: 2;
+        line-height: 1.5;
     }
-
-    #marketButton:hover ~ #marketOverlayText{
-        color: transparent;
-    }
-
-    #toursOverlayText{
-        font-size: 12px;
-        top: 135%;
-        left: 28%;
-        line-height: 2;
-    }
-
-    #toursButton:hover ~ #toursOverlayText{
-        color: transparent;
-    }
-
-    #weatherOverlayText{
-        font-size: 12px;
-        top: 137%;
-        left: 53%;
-        line-height: 2;
-    }
-
-    #weatherButton:hover ~ #weatherOverlayText{
-        color: transparent;
-    }
-
-    #howToOverlayText{
-        font-size: 12px;
-        top: 138%;
-        left: 76.5%;
-        line-height: 2;
-    }
-
-    #howToButton:hover ~ #howToOverlayText{
-        color: transparent;
-    }
+    
 }
