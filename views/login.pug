@@ -12,17 +12,25 @@ block content
        p(class="underWrapper-content") Log into your account
     
      div(class = "login")
-       form(action='login/loginRequest', method= 'POST', class ="login-form")
+      div
+       form(action='/login/loginRequest', method= 'POST', class ="login-form")
         div(class="loginInputTop")        
          label(for='email')
          input#email(type='text' name='email' placeholder='Email' required='', class ="login-input")
 
         div(class="loginInput")   
          label(for='password')
-         input#password(type='text' name='password' placeholder='Password' required='', class ="login-input")
+         input#password(type='password' name='password' placeholder='Password' required='', class ="login-input")
 
         div(class="loginInput-button")   
          input(type='submit' value='Login', id ="login-button")
          
         p Click here to 
-         a(href='signup') Sign up
+         a(href='/signup') Sign up
+        if errorMessage
+            p.error= errorMessage
+  script.
+    if (window.location.pathname !== '/login') {
+      history.replaceState({}, document.title, '/login');
+    }
+    // If users url contains url from post request, remove that to orignal pages url for easier navigation

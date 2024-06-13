@@ -187,3 +187,4 @@ describe('checkLoginDetails', () => {
         await expect(User.checkLoginDetails('email@gmail.com', 'password')).rejects.toThrow('Error checking login details: ' + errorMessage);
     });
 });
+

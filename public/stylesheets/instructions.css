@@ -32,3 +32,8 @@ li{
 .textContainer {
     width: 45%;
 }
+
+.error{
+    color: red;
+  }
+  

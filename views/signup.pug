@@ -22,7 +22,7 @@ block content
 
         div(class="signupInput")
           label(for='password')
-          input#password(type='text' name='password' placeholder='Password*'  class ="signup-input", required=true)
+          input#password(type='password' name='password' placeholder='Password*'  class ="signup-input", required=true)
         
         div(class="signupInput")
           label(for='email')
@@ -38,3 +38,11 @@ block content
             p.error= errorMessage
       p If you have an account already 
        a(href='/login', class = "links") Log in
+
+  script.
+
+    if (window.location.pathname !== '/signup') {
+      history.replaceState({}, document.title, '/signup');
+    }
+
+    // If users url contains url from post request, remove that to orignal pages url for easier navigation

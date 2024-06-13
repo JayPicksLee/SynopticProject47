@@ -65,7 +65,7 @@ exports.checkExists = async (email)=>{
             return false;
         }
     } catch (error) {
-            throw new Error("Error finding username: " +error.message);
+            throw new Error(error.message);
     }
 
 };
@@ -76,21 +76,20 @@ exports.checkLoginDetails = async (email, password)=>{
         let user = await User.findOne({email: email})
 
         if (!user) {
-            return false;
+            throw new Error("Error finding user")
+        } else{
+            const passwordMatch = await bcrypt.compare(password, user.password);
+            if(!passwordMatch){
+                throw new Error("Password is incorrect.")
+            }else{
+                return user;
+            }
         }
 
-        const passwordMatch = await bcrypt.compare(password, user.password);
-
-        if(!passwordMatch){
-            return false;
-        }
-
-        return user;
     } catch (error) {
-        throw new Error("Error checking login details: " +error.message);
+        throw new Error(error.message);
     }
 };
-
 
 exports.signUpUser = async (firstName, lastName, password, email, phoneNumber) => 
     {
@@ -100,24 +99,25 @@ exports.signUpUser = async (firstName, lastName, password, email, phoneNumber) =
         const phoneRegex = /^\d{11}$/;
 
         const passwordHashed = await bcrypt.hash(password, 8);
-        console.log("Checking if user already exists...");
 
         if(email.indexOf(" ") > -1 ){
             throw new Error("Email cannot have white space.");
 
-        }
-        if(await this.checkExists(email) == true){
-            throw new Error("Email already exists");
         }else{
-            console.log("Checking password for white space...")
-            if(password.indexOf(" ") > -1 ){
-                throw new Error("Password cannot have white space.");
+            if(await this.checkExists(email) == true){
+                throw new Error("Email already exists");
             }else{
-                const newUser = new User({accountLevel: isAdmin, firstName: firstName, lastName: lastName, password: passwordHashed, email: email, phoneNumber: phoneNumber});
-                const savedUser = await newUser.save();
-
-            }  
+                console.log("Checking password for white space...")
+                if(password.indexOf(" ") > -1 ){
+                    throw new Error("Password cannot have white space.");
+                }else{
+                    const newUser = new User({accountLevel: isAdmin, firstName: firstName, lastName: lastName, password: passwordHashed, email: email, phoneNumber: phoneNumber});
+                    const savedUser = await newUser.save();
+    
+                }  
+            }
         }
+        
 }
 
 exports.displayUserAccounts = async () => 

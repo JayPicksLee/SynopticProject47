@@ -8,6 +8,7 @@ router.get('/', function(req, res, next) {
     console.log(req.session.id);
     console.log(req.session.userID);
     console.log(req.session.isLoggedIn);
+
     req.session.isAdmin = false;
     req.sessionStore.get(req.session.id, (err, sessionData) =>{
       if(err){
@@ -44,48 +45,38 @@ router.post(
     const password = req.body.password;
   
     try {
-      //Checking if the email inputted exists
+
       const exists = await usermodel.checkExists(email);
   
       if (exists) {
   
-        const userID = await usermodel.getUserID(email);
-        req.session.userID = userID;
-        req.session.isLoggedIn = true;
-        //Checking user details
+
         const user = await usermodel.checkLoginDetails(email, password);
   
         if (user) {
-          
+          const userID = await usermodel.getUserID(email);
+          req.session.userID = userID;
+          req.session.isLoggedIn = true;
           const level = await usermodel.getUserStatus(email);
-          //Checking user status to differentiate user and admin
+
           if (level) { 
             req.session.isAdmin = true;
 
             res.redirect('/admin');
-          } else {
+          } else if(!level){
             req.session.isAdmin = false;
             res.redirect('/user');
           }
   
-        } else {
-  
-          console.log("Invalid login details");
-          res.render('/', { error: true, message: "Invalid login details" });
         }
-      } else {
-  
-        console.log("User does not exist");
-        res.render('/', { error: true, message: "User does not exist" });
+      }else if (!exists){
+        throw new Error("User does not exist");
       }
-  
     } catch (error) {
-  
-      console.error("An error occurred:", error);
-      res.render('index', { error: true, message: "An error occurred" });
+      
+      res.render('login', {errorMessage: error.message });
     }
     
-
   });
 
 
