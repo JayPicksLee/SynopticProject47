@@ -12,6 +12,7 @@ block content
 
      div(class = "signup")
       form(action='/signup/createNewUser', method= 'POST', class="signup-form")
+        //- Input fields
         div(class="signupInputTop")
           label(for='firstName') 
           input#username(type='text' name='firstName' placeholder='First name*', class ="signup-input",required=true)
@@ -31,14 +32,14 @@ block content
         div(class="signupInput")
           label(for='phoneNumber')
           input#phoneNumber(type='text' name='phoneNumber' placeholder='Phone Number' class ="signup-input" required= false)
-      
+        //- Login button
         div(class="signupInput-button")
           input(type='submit' value='Sign Up', id="signup-button")
         if errorMessage
             p.error= errorMessage
       p If you have an account already 
        a(href='/login', class = "links") Log in
-
+  //- Script for changing url
   script.
 
     if (window.location.pathname !== '/signup') {

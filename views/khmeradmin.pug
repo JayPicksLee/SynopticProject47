@@ -12,8 +12,10 @@ block content
       div(class = "admin_titles")
         h2 គ្រប់គ្រងទីផ្សារ
           button(onclick="showNewMarketItemDialog()", id = "newButton") បន្ថែមធាតុថ្មី។
+      //- Dialog box for adding new item
       dialog(id="newItemDialog")
        form(action='/admin/AddItem', method='POST')
+        //- Dialog inputs
         label(for="newItemName") ឈ្មោះ
         input(type="text", name ="newItemName")
 
@@ -26,7 +28,7 @@ block content
         label(for="newItemAvailability") ភាពអាចរកបាន
         input(type="text", name ="newItemAvailability")
         button(type="submit") បន្ថែម
-
+      //- Rendered items from database
       div(class = "admin_items")
         ul 
         each item in items
@@ -44,8 +46,10 @@ block content
       div(class = "admin_titles")
         h2 គ្រប់គ្រងដំណើរទេសចរណ៍
           button(onclick="showNewTourDialog()", id = "newButton") បន្ថែមដំណើរកម្សាន្តថ្មី។
+      //- Dialog box for adding new tour
       dialog(id="newTourDialog")
        form(action='/admin/AddTour', method='POST')
+        //- Dialog inputs
         label(for="newTourGuide") ម​គ្គុ​ទេស​ក៍​ទេសចរណ៍
         input(type="text", name ="newTourGuide")
 
@@ -63,7 +67,7 @@ block content
 
         button(type="submit") បន្ថែម
 
-
+      //- Rendered tours from database
       div(class = "admin_items")
         ul 
           each tour in tours
@@ -80,7 +84,7 @@ block content
 
     div(class ="users")
       h2 គ្រប់គ្រងអ្នកប្រើប្រាស់
-
+      //- Rendered users from database
       div(class = "admin_items")
         ul 
         each user in users 

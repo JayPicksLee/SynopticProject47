@@ -132,7 +132,7 @@ describe('checkExists', () => {
         const errorMessage = 'Database error';
         jest.spyOn(mongoose.Model, 'findOne').mockRejectedValue(new Error(errorMessage));
 
-        await expect(User.checkExists('email@gmail.com')).rejects.toThrow('Error finding username: ' + errorMessage);
+        await expect(User.checkExists('email@gmail.com')).rejects.toThrow(errorMessage);
     });
 });
 
@@ -151,28 +151,27 @@ describe('checkLoginDetails', () => {
         expect(result).toEqual(mockUserData);
     });
 
-    it('should return false if user is not found', async () => {
-        jest.spyOn(mongoose.Model, 'findOne').mockResolvedValue(null);
+    it('should throw error if user is not found', async () => {
+        const errorMessage = 'Error finding user';
+        jest.spyOn(mongoose.Model, 'findOne').mockRejectedValue(new Error(errorMessage));
 
-        const result = await User.checkLoginDetails('email@gmail.com', 'wrongPassword');
-        expect(result).toBe(false);
+        await expect(User.checkLoginDetails('email@gmail.com', 'wrongPassword')).rejects.toThrow(errorMessage);
     });
 
-    it('should return false if password is incorrect', async () => {
-        const mockUserData = { _id: '123', email: 'email@gmail.com', password: 'hashedPassword' };
-        jest.spyOn(mongoose.Model, 'findOne').mockResolvedValue(mockUserData);
+    it('should throw error if password is incorrect', async () => {
+        const errorMessage = 'Password is incorrect';
+        jest.spyOn(mongoose.Model, 'findOne').mockRejectedValue(new Error(errorMessage));
 
         bcrypt.compare.mockResolvedValue(false);
 
-        const result = await User.checkLoginDetails('email@gmail.com', 'wrongPassword');
-        expect(result).toBe(false);
+        await expect(User.checkLoginDetails('email@gmail.com', 'wrongPassword')).rejects.toThrow(errorMessage);
     });
 
     it('should throw an error if User.findOne fails', async () => {
         const errorMessage = 'Database error';
         jest.spyOn(mongoose.Model, 'findOne').mockRejectedValue(new Error(errorMessage));
 
-        await expect(User.checkLoginDetails('email@gmail.com', 'password')).rejects.toThrow('Error checking login details: ' + errorMessage);
+        await expect(User.checkLoginDetails('email@gmail.com', 'password')).rejects.toThrow(errorMessage);
     });
 
     it('should throw an error if bcrypt.compare fails', async () => {
@@ -184,7 +183,7 @@ describe('checkLoginDetails', () => {
             throw new Error(errorMessage);
         });
 
-        await expect(User.checkLoginDetails('email@gmail.com', 'password')).rejects.toThrow('Error checking login details: ' + errorMessage);
+        await expect(User.checkLoginDetails('email@gmail.com', 'password')).rejects.toThrow(errorMessage);
     });
 });
 

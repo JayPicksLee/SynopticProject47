@@ -13,6 +13,7 @@ block content
     
      div(class = "login")
        form(action='login/loginRequest', method= 'POST', class ="login-form")
+        //- Input fields
         div(class="loginInputTop")        
          label(for='email')
          input#email(type='text' name='email' placeholder='Email' required='', class ="login-input")
@@ -20,9 +21,19 @@ block content
         div(class="loginInput")   
          label(for='password')
          input#password(type='text' name='password' placeholder='Password' required='', class ="login-input")
-
+        //- Login button
         div(class="loginInput-button")   
          input(type='submit' value='Login', id ="login-button")
-         
+
         p กดตรงนี้เพื้อ 
          a(href='signup') ลงสมัคร
+
+        if errorMessage
+            p.error= errorMessage
+            
+  //- Script for changing url            
+  script.
+    if (window.location.pathname !== '/login') {
+      history.replaceState({}, document.title, '/login');
+    }
+    // If users url contains url from post request, remove that to orignal pages url for easier navigation

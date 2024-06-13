@@ -12,8 +12,10 @@ block content
       div(class = "admin_titles")
         h2 Manage Market
           button(onclick="showNewMarketItemDialog()", id = "newButton") Add new item
+      //- Dialog box for adding new item
       dialog(id="newItemDialog")
        form(action='/admin/AddItem', method='POST')
+        //- Dialog inputs
         label(for="newItemName") Name
         input(type="text", name ="newItemName")
 
@@ -26,7 +28,7 @@ block content
         label(for="newItemAvailability") Availability
         input(type="text", name ="newItemAvailability")
         button(type="submit") Add
-
+      //- Rendered items from database
       div(class = "admin_items")
         ul 
         each item in items
@@ -44,8 +46,10 @@ block content
       div(class = "admin_titles")
         h2 Manage Tours
           button(onclick="showNewTourDialog()", id = "newButton") Add new tour
+      //- Dialog box for adding new tour
       dialog(id="newTourDialog")
        form(action='/admin/AddTour', method='POST')
+        //- Dialog inputs
         label(for="newTourGuide") Tour guide
         input(type="text", name ="newTourGuide")
 
@@ -63,7 +67,7 @@ block content
 
         button(type="submit") Add
 
-
+      //- Rendered tours from database
       div(class = "admin_items")
         ul 
           each tour in tours
@@ -80,7 +84,7 @@ block content
 
     div(class ="users")
       h2 Manage Users
-
+      //- Rendered users from database
       div(class = "admin_items")
         ul 
         each user in users 
