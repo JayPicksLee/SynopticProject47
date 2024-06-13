@@ -11,7 +11,7 @@ const marketItemSchema = new Schema({
 });
 
 const Items = mongoose.model("Items", marketItemSchema)
-
+//function to allow pug to render information from the database
 exports.getItems=async ()=>{
     try {
         const all = await Items.find({});
@@ -22,7 +22,7 @@ exports.getItems=async ()=>{
     }
 }
 
-
+//this function create scheme for the database that will be use for market page
 exports.createItem = async (name, price, type, availability) => {
     try {
 
@@ -38,7 +38,7 @@ exports.createItem = async (name, price, type, availability) => {
         throw new Error('Error saving item data: ' + error.message);
     }
 }
-
+//this function allow deletion of items through the pug page
 exports.deleteItem = async (itemId)=>{
     try {
         console.log(itemId);

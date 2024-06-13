@@ -19,10 +19,11 @@ router.get('/', async function(req, res, next) {
 
   //Tracking if the visitor has visited the website before, normally the session id resets upon every visit to the main page. Now we can watch the visitor and what they do.
   req.session.visited = true;
+  //this small function allow pug file to render the item based on the database onto the page
   let items = await marketmodel.getItems();
 
-  console.log
-  (items)
+  //this function switch all of the pages language based on the selected language
+  console.log(items)
   switch (req.session.language) {
     case "en":
       res.render('market', {items: items});
