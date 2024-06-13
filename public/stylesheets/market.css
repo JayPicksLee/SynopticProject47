@@ -5,16 +5,16 @@ h1 {
     text-align: center;
     color: white;
 }
-.searchcontainer {
+.searchContainer {
     padding: 25px;
     text-align: center;
 }
-#searchbar {
+#searchBar {
     align-content: center;
     height: 25px;
 }
 
-.introcontainer {
+.introContainer {
     display: flex;
     justify-content: space-between;
     padding: 20px; 
@@ -23,26 +23,26 @@ h1 {
     margin-bottom: 100px;
 }
 
-.intropicturediv {
+.introPicturediv {
     text-align: right;
 }
 
-.introtextdiv {
+.introTextdiv {
     background-color: white;
 }
-#boldtext {
+#boldText {
     font-weight: bold;
     font-size: 41px;    
 }
-#infotext {
+#infoText {
     font-size: 15px;
 }
-#intropic {
+#introPic {
     max-width: 100%;
     width: auto;
     height: auto;
 }
-.marketimg { 
+.marketImage { 
     width: 100%;
     transition: transform 330ms ease-in-out;
     margin-top: 10px;
@@ -73,22 +73,23 @@ h1 {
     
     gap: 10px;
 }
+/* @media is used to style the page suitable for phone view */
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 768px) {
     body {
         font-size: 12px;
         margin: 0 auto;
         display: block;
         max-width: 100%;
     }
-    .introcontainer {
+    .introContainer {
         flex-direction: column;
         align-items: center;
     }
-    .introtextdiv {
+    .introTextdiv {
         font-size: 16px;
     }
-    #searchbar {
+    #searchBar {
         width: 90%; 
     }
     nav {
@@ -107,5 +108,13 @@ h1 {
         font-size: 24px; 
         padding: 10px; 
     }
+    .item-container {
+        flex-direction: column; 
+        align-items: center; 
+    }
+    .item-box {
+        width: 80%; 
+        max-width: 100%; 
+        margin-bottom: 15px; 
+    }
 }
-
