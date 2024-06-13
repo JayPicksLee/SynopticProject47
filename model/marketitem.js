@@ -15,7 +15,6 @@ const Items = mongoose.model("Items", marketItemSchema)
 exports.getItems=async ()=>{
     try {
         const all = await Items.find({});
-        console.log("Finding market items");
         return all;
     } catch (error) {
         throw new Error("Error getting items: " +error.message);
